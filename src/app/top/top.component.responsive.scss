@@ -1,0 +1,427 @@
+// RESPONSIVENESS: DESKTOP
+$scale-factor-1040px: 0.8;
+@media (max-width: 1040px) {
+    #top {
+        #profileContainer {
+            #profilePictureContainer {
+                #profilePictureBackground {
+                    width: calc(480px * #{$scale-factor-1040px} * 0.99);
+                    height: calc(600px * #{$scale-factor-1040px});
+                    margin-left: 50px;
+                    margin-top: 50px;
+                    #profilePicture {
+                        width: calc(498px * #{$scale-factor-1040px});
+                        height: calc(750px * #{$scale-factor-1040px});
+                        margin-top: -109px;
+                        margin-left: -9px;
+                    }
+                }
+            }
+            #profileDetailsContainer {
+                height: calc(690px * #{$scale-factor-1040px});
+                #profileDetailsTop {
+                    #profileLogoContainer {
+                        #profileLogo {
+                            width: calc(80px * #{$scale-factor-1040px});
+                            height: calc(45px * #{$scale-factor-1040px});
+                            margin-left: 10%;
+                        }
+                    }
+                    #topContactIcons {
+                        gap: 5px;
+                        #topGithubIcon {
+                            width: calc(30px * 0.9);
+                            height: calc(30px * 0.9);
+                        } 
+                        #topEmailIcon {
+                            width: calc(30px * 0.9);
+                            height: calc(30px * 0.9);
+                        }
+                        #topLinkedInIcon {
+                            width: calc(30px * 0.9);
+                            height: calc(30px * 0.9);
+                        }
+                    }
+                }
+                #nameAndJobTitle {
+                    #name {
+                        font-size: calc(88px * #{$scale-factor-1040px});
+                    }
+                    #jobTitle {
+                        font-size: calc(40px * #{$scale-factor-1040px});
+                    }
+                }
+                #arrowDownContainerDesktop {
+                    width: calc(40px * #{$scale-factor-1040px});
+                    height: calc(80px * #{$scale-factor-1040px});
+                    .arrowDownBorder {
+                        width: calc(40px * #{$scale-factor-1040px});
+                        height: calc(80px * #{$scale-factor-1040px});
+                        #arrowDown {
+                            transform: scale(#{$scale-factor-1040px});
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+$scale-factor-830px: 0.6;
+@media (max-width: 830px) {
+    #top {
+        #profileContainer {
+            #profilePictureContainer {
+                #profilePictureBackground {
+                    width: calc(480px * #{$scale-factor-830px} * 0.99);
+                    height: calc(600px * #{$scale-factor-830px});
+                    margin-left: 50px;
+                    margin-top: 35px;
+                    #profilePicture {
+                        width: calc(498px * #{$scale-factor-830px});
+                        height: calc(750px * #{$scale-factor-830px});
+                        margin-top: -81px;
+                        margin-left: -7px;
+                    }
+                }
+            }
+            #profileDetailsContainer {
+                height: calc(690px * #{$scale-factor-830px});
+                #profileDetailsTop {
+                    #profileLogoContainer {
+                        #profileLogo {
+                            width: calc(80px * #{$scale-factor-830px});
+                            height: calc(45px * #{$scale-factor-830px});
+                            margin-left: 10%;
+                        }
+                    }
+                    #topContactIcons {
+                        gap: 5px;
+                        #topGithubIcon {
+                            width: calc(30px * 0.8);
+                            height: calc(30px * 0.8);
+                        } 
+                        #topEmailIcon {
+                            width: calc(30px * 0.8);
+                            height: calc(30px * 0.8);
+                        }
+                        #topLinkedInIcon {
+                            width: calc(30px * 0.8);
+                            height: calc(30px * 0.8);
+                        }
+                    }
+                }
+                #nameAndJobTitle {
+                    #name {
+                        font-size: calc(88px * #{$scale-factor-830px});
+                    }
+                    #jobTitle {
+                        font-size: calc(40px * #{$scale-factor-830px});
+                    }
+                }
+                #arrowDownContainerDesktop {
+                    width: calc(40px * #{$scale-factor-830px});
+                    height: calc(80px * #{$scale-factor-830px});
+                    .arrowDownBorder {
+                        width: calc(40px * #{$scale-factor-830px});
+                        height: calc(80px * #{$scale-factor-830px});
+                        .arrowDown {
+                            transform: scale(#{$scale-factor-830px});
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+$scale-factor-630px: 0.4;
+@media (max-width: 630px) {
+    #top {
+        #profileContainer {
+            #profilePictureContainer {
+                #profilePictureBackground {
+                    width: calc(480px * #{$scale-factor-630px} * 0.98);
+                    height: calc(600px * #{$scale-factor-630px});
+                    margin-left: 50px;
+                    margin-top: 30px;
+                    #profilePicture {
+                        width: calc(498px * #{$scale-factor-630px});
+                        height: calc(750px * #{$scale-factor-630px});
+                        margin-top: -55px;
+                        margin-left: -6px;
+                    }
+                }
+            }
+            #profileDetailsContainer {
+                height: calc(690px * #{$scale-factor-630px});
+                #profileDetailsTop {
+                    #profileLogoContainer {
+                        #profileLogo {
+                            width: calc(80px * #{$scale-factor-630px});
+                            height: calc(45px * #{$scale-factor-630px});
+                            margin-left: 10%;
+                        }
+                    }
+                    #topContactIcons {
+                        gap: 5px;
+                        #topGithubIcon {
+                            width: calc(30px * 0.7);
+                            height: calc(30px * 0.7);
+                        } 
+                        #topEmailIcon {
+                            width: calc(30px * 0.7);
+                            height: calc(30px * 0.7);
+                        }
+                        #topLinkedInIcon {
+                            width: calc(30px * 0.7);
+                            height: calc(30px * 0.7);
+                        }
+                    }
+                }
+                #nameAndJobTitle {
+                    #name {
+                        font-size: calc(88px * #{$scale-factor-630px});
+                    }
+                    #jobTitle {
+                        font-size: calc(40px * #{$scale-factor-630px});
+                    }
+                }
+                #arrowDownContainerDesktop {
+                    width: calc(40px * #{$scale-factor-630px});
+                    height: calc(80px * #{$scale-factor-630px});
+                    .arrowDownBorder {
+                        width: calc(40px * #{$scale-factor-630px});
+                        height: calc(80px * #{$scale-factor-630px});
+                        .arrowDown {
+                            transform: scale(#{$scale-factor-630px});
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+$scale-factor-420px: 0.3;
+@media (max-width: 630px) {
+    #top {
+        #profileContainer {
+            #profilePictureContainer {
+                #profilePictureBackground {
+                    width: calc(480px * #{$scale-factor-420px} * 0.98);
+                    height: calc(600px * #{$scale-factor-420px});
+                    margin-left: 50px;
+                    margin-top: 30px;
+                    #profilePicture {
+                        width: calc(498px * #{$scale-factor-420px});
+                        height: calc(750px * #{$scale-factor-420px});
+                        margin-top: -42px;
+                        margin-left: -4px;
+                    }
+                }
+            }
+            #profileDetailsContainer {
+                height: calc(690px * #{$scale-factor-420px});
+                #profileDetailsTop {
+                    #profileLogoContainer {
+                        #profileLogo {
+                            width: calc(80px * #{$scale-factor-420px});
+                            height: calc(45px * #{$scale-factor-420px});
+                            margin-left: 10%;
+                        }
+                    }
+                    #topContactIcons {
+                        gap: 5px;
+                        #topGithubIcon {
+                            width: calc(30px * 0.6);
+                            height: calc(30px * 0.6);
+                        } 
+                        #topEmailIcon {
+                            width: calc(30px * 0.6);
+                            height: calc(30px * 0.6);
+                        }
+                        #topLinkedInIcon {
+                            width: calc(30px * 0.6);
+                            height: calc(30px * 0.6);
+                        }
+                    }
+                }
+                #nameAndJobTitle {
+                    #name {
+                        font-size: calc(88px * #{$scale-factor-420px});
+                    }
+                    #jobTitle {
+                        font-size: calc(40px * #{$scale-factor-420px});
+                    }
+                }
+                #arrowDownContainerDesktop {
+                    width: calc(40px * #{$scale-factor-420px});
+                    height: calc(80px * #{$scale-factor-420px});
+                    .arrowDownBorder {
+                        width: calc(40px * #{$scale-factor-420px});
+                        height: calc(80px * #{$scale-factor-420px});
+                        .arrowDown {
+                            transform: scale(#{$scale-factor-420px});
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 425px) {
+    #top {
+        #profileContainer {
+            #profileDetailsContainer {
+                #profileDetailsTop {
+                    #profileLogoContainer {
+                        align-items: center;
+                        #profileLogo {
+                            margin-left: 24%;
+                        }
+                    }
+                }
+                #nameAndJobTitle {
+                    #name {
+                        margin-top: -40px;
+                    }
+                    #jobTitle {
+                        margin-top: -10px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// RESPONSIVENESS: MOBILE
+@media (max-width: 375px) {
+    #top {
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 5vh;
+        // padding-bottom: 52px;
+        #topMobile {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+            width: 80%;
+            padding-top: 10px;
+            #topMobileProfileLogo {
+                margin-left: 5px;
+            }
+        }
+        #profileContainer {
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            gap: 8vh;
+            #profilePictureContainer {
+                transform: scale(1.2);
+                margin-right: 7px;
+                #profilePictureBackground {
+                    width: calc(480px * #{$scale-factor-630px} * 0.98);
+                    height: calc(600px * #{$scale-factor-630px});
+                    #profilePicture {
+                        width: calc(498px * #{$scale-factor-630px});
+                        height: calc(750px * #{$scale-factor-630px});
+                        margin-top: -55px;
+                        margin-left: -6px;
+                    }
+                    #mobileMenu {   
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-evenly;
+                        height: 100%;
+                        #linksContainer {
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: space-evenly;
+                            align-items: center;
+                            gap: 6vw;
+                            font-size: 18px;                        // does not work!!! mobile Menu Buttons too large!
+                        }
+                        #languagesContainer {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            gap: 10px;
+                            font-size: 18px;
+                            #germanContainer {
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                width: 40px;
+                                height: 40px;
+                                border-radius: 35%;
+                                #german {
+                                    color: black;
+                                }
+                            }
+                            #englishContainer {
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                width: 40px;
+                                height: 40px;
+                                border-radius: 35%;
+                                #english {
+                                    color: white;
+                                }
+                            }
+                        }
+                    }
+                } 
+            }
+            #profileDetailsContainer {
+                gap: 20px;
+                #profileDetailsTop {
+                    #profileLogoContainer {
+                        #profileLogo {
+                            display: none;
+                        }
+                    }
+                    #topContactIcons {
+                        transform: none;
+                        display: none;
+                    }
+                }
+                #nameAndJobTitle {
+                    #name {
+                        font-size: 48px;
+                    }
+                    #jobTitle {
+                        font-size: 24px;
+                    }
+                }
+                #arrowDownContainerDesktop {
+                    display: none;
+                }
+                #arrowDownContainerMobile {
+                    display: flex;
+                    width: calc(40px * #{$scale-factor-830px});
+                    height: calc(80px * #{$scale-factor-830px});
+                    .arrowDownBorder {
+                        border: 1px solid rgb(137, 186, 217);
+                        border-top-left-radius: 20px;
+                        border-top-right-radius: 20px;
+                        border-bottom-left-radius: 20px;
+                        border-bottom-right-radius: 20px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        cursor: pointer;
+                        width: calc(40px * #{$scale-factor-830px});
+                        height: calc(80px * #{$scale-factor-830px});
+                        .arrowDown {
+                            transform: scale(#{$scale-factor-830px});
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

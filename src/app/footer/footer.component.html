@@ -1,0 +1,32 @@
+<div id="footer" [@fadeIn]="isVisible ? 'visible' : 'hidden'" appIntersectionObserver (intersecting)="onIntersection($event)">
+    <div id="footerContainer">
+        <div id="footerLeft">
+            <a (click)="showImprintPage($event)">{{ footerTemplateService.languageData[language].imprint }}</a>
+            <a (click)="showPrivacyPage($event)">{{ footerTemplateService.languageData[language].privacy }}</a>
+            <p href="">&copy; Andrej Homann 2025</p>
+        </div>
+        <a id="footerMiddle" href="#top">
+            <img id="profileLogo" src="assets/logo/4.png" alt="profile logo">
+        </a>
+        <div id="footerRight">
+            <a class="socialMediaIconsContainer" href="https://github.com/AndrejHomann" target="_blank"><img id="githubIcon" class="socialMediaIcons" src="assets/media_icons/github.png" alt="github"></a>
+            <a class="socialMediaIconsContainer" href="mailto:andrej.homann1990@gmail.com?subject=Kontaktanfrage"><img id="emailIcon" class="socialMediaIcons" src="assets/media_icons/mail.png" alt="eMail"></a>
+            <a class="socialMediaIconsContainer" href="https://www.linkedin.com/in/andrej-homann-801388101/" target="_blank"><img id="linkedInIcon" class="socialMediaIcons" src="assets/media_icons/linked.png" alt="linkedIn"></a>
+        </div>
+        <a id="footerMiddleMobile" href="#top">
+            <img id="profileLogoMobile" src="assets/logo/4.png" alt="profile logo">
+        </a>
+        <div id="footerRightMobile">
+            <a class="socialMediaIconsContainerMobile" href="https://github.com/AndrejHomann" target="_blank"><img id="githubIcon" class="socialMediaIconsMobile" src="assets/media_icons/github.png" alt="github"></a>
+            <a class="socialMediaIconsContainerMobile" href="mailto:andrej.homann1990@gmail.com?subject=Kontaktanfrage"><img id="emailIcon" class="socialMediaIconsMobile" src="assets/media_icons/mail.png" alt="eMail"></a>
+            <a class="socialMediaIconsContainerMobile" href="https://www.linkedin.com/in/andrej-homann-801388101/" target="_blank"><img id="linkedInIcon" class="socialMediaIconsMobile" src="assets/media_icons/linked.png" alt="linkedIn"></a>
+        </div>
+        <div id="footerLeftMobile">
+            <div id="footerLeftMobileLinkContainer">
+                <a (click)="showImprintPage($event)">{{ footerTemplateService.languageData[language].imprint }}</a>
+                <a (click)="showPrivacyPage($event)">{{ footerTemplateService.languageData[language].privacy }}</a>
+            </div>
+            <p href="">&copy; Andrej Homann 2025</p>
+        </div>
+    </div>
+</div>

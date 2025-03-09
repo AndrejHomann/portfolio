@@ -1,0 +1,15 @@
+<div id="aboutMe" [@fadeIn]="isVisible ? 'visible' : 'hidden'" appIntersectionObserver (intersecting)="onIntersection($event)">
+    <h1>{{ aboutMeTemplateService.languageData[language].aboutMeTitle }}</h1>
+    <div id="aboutMeTextContainer">
+        <p>
+            {{ aboutMeTemplateService.languageData[language].TextLineOne }} <br>
+            <br>
+            {{ aboutMeTemplateService.languageData[language].TextLineTwo }} <br>
+            <br>
+            {{ aboutMeTemplateService.languageData[language].TextLineThree }} <br>
+            {{ aboutMeTemplateService.languageData[language].TextLineFour }} <br>
+            <br>
+            {{ aboutMeTemplateService.languageData[language].TextLineFive }}
+        </p>
+    </div>
+</div>

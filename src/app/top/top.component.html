@@ -1,0 +1,63 @@
+<div id="top">
+    <div id="topMobile">
+        <img id="topMobileProfileLogo" src="assets/logo/5.png" alt="profile logo">
+        <div (click)="hamburgerAnimation()" class="hamburgerMenu">
+            <div id="hamburger" class="hamburgerMenuButton"></div>
+        </div>
+    </div>
+    <div id="profileContainer">
+        <div id="profilePictureContainer">
+            <div id="profilePictureBackground">
+                <img id="profilePicture" src="assets/andrej.png" alt="profile photo">
+                <div id="mobileMenu" class="hide">
+                    <div id="linksContainer" *ngIf="language === 'english'">
+                        <a href="#aboutMe">About Me</a>
+                        <a href="#skills">Skills</a>
+                        <a href="#projects">Projects</a>
+                        <a href="#contact">Contact</a>
+                    </div> 
+                    <div id="linksContainer" *ngIf="language === 'german'">
+                        <a href="#aboutMe">Über Mich</a>
+                        <a href="#skills">Skills</a>
+                        <a href="#projects">Projekte</a>
+                        <a href="#contact">Kontakt</a>
+                    </div> 
+                    <div id="languagesContainer">
+                        <div id="germanContainer" (click)="showGerman()" class="unmark">
+                            <a id="german" href="javascript:void(0);">DE</a>
+                        </div>
+                        <div id="englishContainer" (click)="showEnglish()" class="mark">
+                            <a id="english" href="javascript:void(0);">EN</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="profileDetailsContainer">
+            <div id="profileDetailsTop">
+                <div id="profileLogoContainer">
+                    <img id="profileLogo" src="assets/logo/5.png" alt="profile logo">
+                </div>
+                <div id="topContactIcons">
+                    <a href="https://github.com/AndrejHomann" target="_blank"><img id="topGithubIcon" src="assets/media_icons/top/github.png" alt="github"></a>
+                    <a href="mailto:andrej.homann1990@gmail.com?subject=Kontaktanfrage"><img id="topEmailIcon" src="assets/media_icons/top/mail.png" alt="eMail"></a>
+                    <a href="https://www.linkedin.com/in/andrej-homann-801388101/" target="_blank"><img id="topLinkedInIcon" src="assets/media_icons/top/linked.png" alt="linkedIn"></a>
+                </div>
+            </div>
+            <div id="nameAndJobTitle">
+                <span id="name">Andrej Homann</span>
+                <span id="jobTitle">FRONTEND DEVELOPER</span>
+            </div>
+            <a id="arrowDownContainerDesktop" href="#header">
+                <div class="arrowDownBorder">
+                    <img class="arrowDown" src="assets/other/Arrow.svg" alt="arrowDown">
+                </div>
+            </a>
+            <a id="arrowDownContainerMobile" href="#aboutMe">
+                <div class="arrowDownBorder">
+                    <img class="arrowDown" src="assets/other/Arrow.svg" alt="arrowDown">
+                </div>
+            </a>
+        </div>
+    </div>
+</div>

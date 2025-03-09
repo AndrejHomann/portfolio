@@ -1,0 +1,128 @@
+@media (max-width: 770px) {
+    #imprint {
+        margin: 0;
+        padding: 0;
+        width: 100vw;
+        max-width: 1920px;
+        background-color: rgb(37, 45, 51);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        #imprintContainer {
+            width: 80%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            h1 {
+                margin-top: 25px;
+                padding: 0;
+                font-family: 'Anta';
+                font-size: calc(60px * 0.8);
+                font-weight: 400;
+                color: rgb(137, 187, 217);
+            }    
+            .part {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                padding-bottom: 25px;
+                padding-top: 25px;
+                h2  {
+                    text-decoration: underline;
+                    margin-top: 25px;
+                    padding: 0;
+                    font-family: 'Anta';
+                    font-size: calc(32px * 0.8);
+                    font-weight: 100;
+                    color: rgb(137, 187, 217);
+                }   
+                h3  {
+                    margin-top: 25px;
+                    padding: 0;
+                    font-family: 'Anta';
+                    font-size: calc(24px * 0.8);
+                    font-weight: 100;
+                    color: rgb(137, 187, 217);
+                }   
+                p {
+                    font-family: 'JosefinSans';
+                    font-size: calc(16px * 0.8);
+                    font-weight: 400;
+                    color: white;
+                }
+            }
+        }
+    }  
+}
+
+@media (max-width: 375px) {
+    #imprint {
+        margin: 0;
+        padding: 0;
+        width: 100vw;
+        max-width: 1920px;
+        background-color: rgb(37, 45, 51);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding-top: 25px;
+        padding-bottom: 25px;
+        #imprintContainer {
+            width: 80%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            h1 {
+                margin: 0;
+                margin-top: 25px;
+                margin-bottom: 25px;
+                padding: 0;
+                font-family: 'Anta';
+                font-size: calc(60px * 0.5);
+                font-weight: 400;
+                color: rgb(137, 187, 217);
+            }    
+            .part {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                padding-bottom: 25px;
+                h2  {
+                    text-decoration: underline;
+                    margin-top: 10px;
+                    padding: 0;
+                    font-family: 'Anta';
+                    font-size: calc(32px * 0.5);
+                    font-weight: 100;
+                    color: rgb(137, 187, 217);
+                }   
+                h3  {
+                    margin-top: 10px;
+                    padding: 0;
+                    font-family: 'Anta';
+                    font-size: calc(24px * 0.5);
+                    font-weight: 100;
+                    color: rgb(137, 187, 217);
+                }   
+                p {
+                    font-family: 'JosefinSans';
+                    font-size: calc(16px * 0.5);
+                    font-weight: 400;
+                    color: white;
+                }
+            }
+        }
+    }  
+}

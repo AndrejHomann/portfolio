@@ -1,0 +1,169 @@
+@media (max-width: 770px) {
+    #privacy {
+        margin: 0;
+        padding: 0;
+        width: 100vw;
+        min-height: 100vh;
+        max-width: 1920px;
+        background-color: rgb(37, 45, 51);
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: column;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        #privacyContainer {
+            width: 80%;
+            height: 80%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-top: 10px;
+            h1 {
+                margin: 0;
+                margin-bottom: 25px;
+                padding: 0;
+                font-family: 'Anta';
+                font-size: calc(60px * 0.8);
+                font-weight: 400;
+                color: rgb(137, 187, 217);
+            }    
+            .arrowLeftContainerDesktop {
+                transform: scale(0.7) rotate(90deg);
+            }
+            .part {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                padding-bottom: 25px;
+                h2  {
+                    text-decoration: underline;
+                    margin: 0;
+                    margin-top: 10px;
+                    padding: 0;
+                    font-family: 'Anta';
+                    font-size: calc(32px * 0.8);
+                    font-weight: 100;
+                    color: rgb(137, 187, 217);
+                }   
+                h3  {
+                    margin: 0;
+                    margin-top: 10px;
+                    padding: 0;
+                    font-family: 'Anta';
+                    font-size: calc(24px * 0.8);
+                    font-weight: 100;
+                    color: rgb(137, 187, 217);
+                }   
+                h4  {
+                    margin: 0;
+                    margin-top: 10px;
+                    padding: 0;
+                    font-family: 'Anta';
+                    font-size: calc(20px * 0.8);
+                    font-weight: 100;
+                    color: rgb(137, 187, 217);
+                }  
+                p {
+                    font-family: 'JosefinSans';
+                    font-size: calc(16px * 0.9);
+                    font-weight: 400;
+                    color: white;
+                }
+                ul {
+                    font-size: calc(16px * 0.9);
+                }
+                .longPart {
+                    max-width: 90%;
+                }
+            }
+        }
+    }
+}
+@media (max-width: 390px) {
+    #privacy {
+        margin: 0;
+        padding: 0;
+        width: 100vw;
+        min-height: 100vh;
+        max-width: 1920px;
+        background-color: rgb(37, 45, 51);
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: column;
+        padding-top: 25px;
+        padding-bottom: 25px;
+        #privacyContainer {
+            width: 80%;
+            height: 80%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-top: 10px;
+            h1 {
+                margin: 0;
+                margin-bottom: 25px;
+                padding: 0;
+                font-family: 'Anta';
+                font-size: calc(60px * 0.5);
+                font-weight: 400;
+                color: rgb(137, 187, 217);
+            }    
+            .arrowLeftContainerDesktop {
+                transform: scale(0.6) rotate(90deg);
+            }
+            .part {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                padding-bottom: 25px;
+                h2  {
+                    text-decoration: underline;
+                    margin: 0;
+                    margin-top: 10px;
+                    padding: 0;
+                    font-family: 'Anta';
+                    font-size: calc(32px * 0.5);
+                    font-weight: 100;
+                    color: rgb(137, 187, 217);
+                }   
+                h3  {
+                    margin: 0;
+                    margin-top: 10px;
+                    padding: 0;
+                    font-family: 'Anta';
+                    font-size: calc(24px * 0.5);
+                    font-weight: 100;
+                    color: rgb(137, 187, 217);
+                }   
+                h4  {
+                    margin: 0;
+                    margin-top: 10px;
+                    padding: 0;
+                    font-family: 'Anta';
+                    font-size: calc(20px * 0.5);
+                    font-weight: 100;
+                    color: rgb(137, 187, 217);
+                }  
+                p {
+                    font-family: 'JosefinSans';
+                    font-size: calc(16px * 0.6);
+                    font-weight: 400;
+                    color: white;
+                }
+                ul {
+                    font-size: calc(16px * 0.6);
+                }
+            }
+        }
+    }
+}

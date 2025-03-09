@@ -1,0 +1,31 @@
+<div id="skills" [@scale]="isVisible ? 'large' : 'small'" appIntersectionObserver (intersecting)="onIntersection($event)">
+    <h1>{{ skillsTemplateService.languageData[language].skillsTitle }}</h1>
+    <div id="skillsContainer">
+        <div id="skillsIcons">
+            <img src="assets/skill_icons/html.svg" alt="html">
+            <img src="assets/skill_icons/css.svg" alt="css">
+            <img src="assets/skill_icons/javascript.svg" alt="javaScript">
+            <img src="assets/skill_icons/firebase.svg" alt="firebase">
+            <img src="assets/skill_icons/angular.svg" alt="angular">
+            <img src="assets/skill_icons/typescript.svg" alt="typeScript">
+            <img src="assets/skill_icons/git.svg" alt="git">
+            <img src="assets/skill_icons/api.svg" alt="api">
+        </div>
+        <div id="skillsTextMobile">
+            <span id="skillsTextTop">{{ skillsTemplateService.languageData[language].skillsTextTop }}</span>
+            <div id="skillsToLearnContainer">
+                <img id="pythonIcon" src="assets/skill_icons/python.svg" alt="python">
+                <img id="cIcon" src="assets/skill_icons/c.svg" alt="c#">
+            </div>
+            <span id="skillsTextBottom">{{ skillsTemplateService.languageData[language].skillsTextBottom }}</span>
+        </div>
+        <div id="skillsText">
+            <span id="skillsTextTop">{{ skillsTemplateService.languageData[language].skillsTextTop }}</span>
+            <div id="skillsToLearnContainer">
+                <img id="pythonIcon" src="assets/skill_icons/python.svg" alt="python">
+                <img id="cIcon" src="assets/skill_icons/c.svg" alt="c#">
+            </div>
+            <span id="skillsTextBottom">{{ skillsTemplateService.languageData[language].skillsTextBottom }}</span>
+        </div>
+    </div>
+</div>

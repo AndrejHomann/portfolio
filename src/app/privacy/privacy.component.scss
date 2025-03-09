@@ -1,0 +1,112 @@
+#privacy {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    min-height: 100vh;
+    max-width: 1920px;
+    background-color: rgb(37, 45, 51);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    #privacyContainer {
+        width: 80%;
+        height: 80%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 10px;
+        .arrowLeftContainerDesktop {
+            transform: scale(0.8) rotate(90deg);
+            &:hover {
+                transition: all 0.25s ease-in-out; 
+                color: #007bff; 
+                cursor: pointer;
+                transform: scale(1.25) rotate(90deg);
+            }
+            .arrowLeftBorder {
+                width: 40px;
+                height: 80px;
+                border: 1px solid rgb(137, 186, 217);
+                border-top-left-radius: 20px;
+                border-top-right-radius: 20px;
+                border-bottom-left-radius: 20px;
+                border-bottom-right-radius: 20px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+            }
+        }
+        h1 {
+            margin: 0;
+            margin-bottom: 25px;
+            padding: 0;
+            font-family: 'Anta';
+            font-size: 60px;
+            font-weight: 400;
+            color: rgb(137, 187, 217);
+        }    
+        .part {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding-bottom: 25px;
+            h2  {
+                text-decoration: underline;
+                margin: 0;
+                margin-top: 10px;
+                padding: 0;
+                font-family: 'Anta';
+                font-size: 32px;
+                font-weight: 100;
+                color: rgb(137, 187, 217);
+            }   
+            h3  {
+                margin: 0;
+                margin-top: 10px;
+                padding: 0;
+                font-family: 'Anta';
+                font-size: 24px;
+                font-weight: 100;
+                color: rgb(137, 187, 217);
+            }   
+            h4  {
+                margin: 0;
+                margin-top: 10px;
+                padding: 0;
+                font-family: 'Anta';
+                font-size: 20px;
+                font-weight: 100;
+                color: rgb(137, 187, 217);
+            }  
+            p {
+                font-family: 'JosefinSans';
+                font-size: 16px;
+                font-weight: 400;
+                color: white;
+            }
+            a {
+                color: rgb(137, 187, 217);
+                text-decoration: none; 
+                transition: all 0.25s ease-in-out; 
+                &:hover {
+                  color: #007bff; 
+                  cursor: pointer;
+                }
+            }
+            ul {
+                font-family: 'JosefinSans';
+                font-size: 16px;
+                font-weight: 400;
+                color: white;
+            }
+        }
+    }
+}

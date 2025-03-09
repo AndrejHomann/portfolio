@@ -1,0 +1,396 @@
+#contact {
+    width: 100vw;
+    max-width: 1920px;
+    background-color: rgb(37, 45, 51);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    #contactHeaderContainer {
+        width: 80%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        #contactHeaderContainerLeft {
+            width: 95%;
+            display: flex;
+            justify-content: center;
+            h1 {
+                font-family: 'Anta';
+                font-size: 60px;
+                font-weight: 400;
+                color: rgb(137, 187, 217);
+                margin-top: 100px;
+                margin-bottom: 50px;
+                margin-left: 70px;
+                margin-right: 3%;
+                text-align: center;
+            }
+        }
+        #contactHeaderContainerRight {
+            min-width: 40px;
+            min-height: 55px;
+            display: flex;
+            justify-content: flex-end;
+            #arrowUpContainer {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 40px;
+                height: 80px;
+                border: 1px solid rgb(137, 186, 217);
+                border-top-left-radius: 20px;
+                border-top-right-radius: 20px;
+                border-bottom-left-radius: 20px;
+                border-bottom-right-radius: 20px;
+                margin-top: 10px;
+                cursor: pointer;
+                #arrowUp {
+                    transform: rotate(180deg);
+                }
+            }
+        }
+    }
+    #contactContainer {
+        width: 60%;
+        height: 100%;
+        font-family: 'Josefin Sans';
+        font-weight: 400;
+        #contactContainerTop {
+            width: 100%;
+            display: flex;
+            justify-content: left;
+            align-items: center;
+            margin-bottom: 50px;
+            #contactContainerTopText {
+                width: 50%;
+                font-family: 'JosefinSans';
+                font-size: 18px;
+                font-weight: 400;
+                color: white;
+            }
+            #contactContainerTopMailTel {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                width: 50%;
+                margin-left: 35px;
+                color: white;
+                #contactContainerTopMail {
+                    display: flex;
+                    align-items: center;
+                    gap: 20px;
+                    #contactEmailImage {
+                        width: 30px;
+                        height: 30px;
+                    }
+                    #eMailDesktop {
+                        font-size: 20px;
+                    }
+                    #eMailMobile {
+                        display: none;
+                    }
+                }
+                #contactContainerTopTel {
+                    display: flex;
+                    align-items: center;
+                    gap: 20px;
+                    #contactPhoneImage {
+                        width: 30px;
+                        height: 30px;
+                    }
+                    #phoneDesktop {
+                        font-size: 20px;
+                    }
+                    #phoneMobile {
+                        display: none;
+                    }
+                }
+            }
+        }
+        #contactContainerBottom {
+            color: rgb(137, 186, 217);
+            #contactContainerBottomNameMail {
+                width: 102%;
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 30px;
+                #contactContainerBottomName {
+                    display: flex;
+                    flex-direction: column;
+                    width: 48%;
+                    span {
+                        font-size: 16px;
+                        margin-left: 20px;
+                    }
+                    #nameInput {
+                        width: 100%;
+                        background-color: rgb(45, 57, 64);
+                        height: 48px;
+                        color: rgb(137, 187, 217);
+                        border: 1px rgb(137, 187, 217) solid;
+                        border-top-left-radius: 25px;
+                        border-top-right-radius: 25px;
+                        border-bottom-left-radius: 25px;
+                        border-bottom-right-radius: 25px;
+                        text-indent: 20px;
+                        &:focus {
+                            outline: none;
+                            text-indent: 20px;
+                        }
+                    }
+                }
+                #contactContainerBottomMail {
+                    display: flex;
+                    flex-direction: column;
+                    width: 48%;
+                    span {
+                        font-size: 16px;
+                        margin-left: 20px;
+                    }
+                    #mailInput {
+                        width: 100%;
+                        height: 60px;
+                        background-color: rgb(45, 57, 64);
+                        height: 48px;
+                        color: rgb(137, 187, 217);
+                        border: 1px rgb(137, 187, 217) solid;
+                        border-top-left-radius: 25px;
+                        border-top-right-radius: 25px;
+                        border-bottom-left-radius: 25px;
+                        border-bottom-right-radius: 25px;
+                        text-indent: 20px;
+                        &:focus {
+                            outline: none;
+                            text-indent: 20px;
+                        }
+                    }
+                }
+            }
+            #contactContainerBottomMessage {
+                #contactContainerBottomMessageContainer {
+                    span {
+                        font-size: 16px;
+                        margin-left: 20px;
+                    }
+                    #messageInput {
+                        width: 100%;
+                        height: 60px;
+                        background-color: rgb(45, 57, 64);
+                        height: 150px;
+                        color: rgb(137, 187, 217);
+                        border: 1px rgb(137, 187, 217) solid;
+                        border-top-left-radius: 25px;
+                        border-top-right-radius: 25px;
+                        border-bottom-left-radius: 25px;
+                        border-bottom-right-radius: 25px;
+                        padding-left: 20px;
+                        word-wrap: break-word;
+                        white-space: pre-wrap;
+                        &:focus {
+                            outline: none;
+                            padding-left: 20px;
+                            word-wrap: break-word;
+                            white-space: pre-wrap;
+                        }
+                        resize: none;
+                    }
+                }
+                #contactContainerBottomCheckbox {
+                    width: 100%;
+                    margin-top: 25px;
+                    color: white;
+                    min-height: 55px;
+                    #checkbox {
+                        display: flex;
+                        align-items: center;
+                        width: 90%;
+                        gap: 10px;
+                        #checkboxInput[type="checkbox"] {
+                            appearance: none;
+                            background-color: rgb(45, 57, 64);
+                            border: 2px rgb(137, 187, 217) solid;
+                            border-radius: 100%;
+                            min-width: 25px;
+                            min-height: 25px;
+                            cursor: pointer;
+                            position: relative;
+                            &:checked::before, &:checked::after {
+                                pointer-events: none;
+                                position: absolute;
+                                content: "";
+                                display: flex;
+                                height: 2px;
+                                margin-top: -2px;
+                                top: 11px;
+                                width: 22px;
+                                background: rgb(137, 187, 217);
+                            }
+                            &::before {
+                                -webkit-transform: rotate(-45deg);
+                                -ms-transform: rotate(-45deg);
+                                transform: rotate(-45deg);
+                            }
+                            &::after {
+                                -webkit-transform: rotate(45deg);
+                                -ms-transform: rotate(45deg);
+                                transform: rotate(45deg);
+                            }
+                        }
+                        #privacyMessage {
+                            a {
+                                text-decoration: none;
+                                color: rgb(137, 187, 217);
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                }
+                #send {
+                    width: 102.5%;
+                    display: flex;
+                    justify-content: right;
+                    font-family: 'Josefin Sans';
+                    font-weight: 400;
+                    font-size: 18px;
+                    margin-bottom: 50px; 
+                    #sendButton {
+                        width: 80px;
+                        height: 45px;
+                        background-color: transparent;
+                        color: transparent;
+                        border: transparent;
+                        border-top-left-radius: 25px;
+                        border-top-right-radius: 25px;
+                        border-bottom-left-radius: 25px;
+                        border-bottom-right-radius: 25px;
+                        opacity: 60%;
+                        cursor: pointer;
+                        transition: all 0.125s ease-in-out; 
+                    }
+                    #sendButton.valid {
+                        background-color: rgb(45, 57, 64);
+                        color: rgba(248, 245, 236, 1);
+                        border: 1px rgba(248, 245, 236, 1) solid;
+                        &:hover {
+                            transform: scale(1.05);
+                            color: rgb(247, 229, 176);
+                            border: 1px  rgb(247, 229, 176) solid;
+                        }
+                    }
+                    #sendButton.invalid {
+                        background-color: transparent;
+                        color: transparent;
+                        border: 1px transparent solid;
+                        cursor: not-allowed;
+                      }
+                }
+            }
+        }
+    }
+} 
+
+a {
+    color: white;
+    text-decoration: none; 
+    transition: all 0.25s ease-in-out; 
+    &:hover {
+      transform: scale(1.1) translateX(0px);
+    }
+}
+.inputValidationText {
+    color: red;
+    margin-top: 5px;
+}
+.inputValidationTextPrPo {
+    color: red;
+    margin-top: 5px;
+    margin-left: 40px;
+}
+.hide {
+    display: none;
+}
+.show {
+    display: flex;
+}
+
+
+
+
+
+#popupOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    // background-color: rgb(37, 45, 51, 0.5); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    visibility: hidden;
+    opacity: 0;
+    // transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    &.showPopup {
+        display: flex;
+        opacity: 1;
+        visibility: visible;
+        transition: opacity 0.3s ease-in-out;
+    }
+    &.hidePopup {
+        display: none;
+        opacity: 0;
+        visibility: hidden;
+    }
+    #popupInfoMessageSent {
+        width: 25vw;
+        height: 25vh;
+        background-color: rgb(37, 45, 51);
+        border-radius: 15px;
+        border: 1px solid rgb(137, 187, 217);
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+        font-family: Arial, sans-serif;
+        transform: scale(0.8);
+        transition: transform 0.3s ease-in-out;
+        h2 {
+            margin: 0;
+            font-size: 24px;
+            color: rgb(137, 187, 217);
+        }
+        p{
+            color: rgb(137, 187, 217);
+            font-size: 16px;
+        }
+        #popupCloseButton {
+            margin-top: 15px;
+            padding: 10px 20px;
+            border: 1px solid rgb(137, 187, 217);
+            background-color: rgb(37, 45, 51);
+            color: rgb(137, 187, 217);
+            font-size: 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            &:hover {
+                
+                background-color: rgb(137, 187, 217);
+            color: rgb(37, 45, 51);
+            }
+        }
+    }
+    .showPopup {
+        display: flex;
+        visibility: visible;
+        opacity: 1;
+    }
+    // .showPopup #popupInfoMessageSent {
+    //     transform: scale(1) !important;
+    // }
+}

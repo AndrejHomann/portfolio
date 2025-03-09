@@ -1,0 +1,95 @@
+@media (max-width: 1040px) {
+    #header {
+        font-size: calc(26px * 0.9);
+        #headerContainer {
+            #navLogo {
+                width: calc(70px * 0.9);
+                height: calc(40px * 0.9);
+            }
+            #languagesContainer {
+                font-size: calc(18px - 2px);
+                #germanContainer {
+                    width: calc(40px - 5px);
+                    height: calc(40px - 5px);
+                }
+                #englishContainer {
+                    width: calc(40px - 5px);
+                    height: calc(40px - 5px);
+                }
+            }
+        }
+    }
+}
+@media (max-width: 830px) {
+    #header {
+        font-size: calc(26px * 0.8);
+        #headerContainer {
+            #navLogo {
+                width: calc(70px * 0.8);
+                height: calc(40px * 0.8);
+            }
+            #languagesContainer {
+                font-size: calc(18px - 2*2px);
+                #germanContainer {
+                    width: calc(40px - 2*5px);
+                    height: calc(40px - 2*5px);
+                }
+                #englishContainer {
+                    width: calc(40px - 2*5px);
+                    height: calc(40px - 2*5px);
+                }
+            }
+        }
+    }
+}
+@media (max-width: 630px) {
+    #header {
+        font-size: calc(26px * 0.6);
+        #headerContainer {
+            #navLogo {
+                width: calc(70px * 0.7);
+                height: calc(40px * 0.7);
+            }
+            #oneLine {
+                display: none;
+            }
+            #twoLines {
+                width: 80%;
+                height: 50%;
+                display: flex;
+                .linksContainer {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    .linksContainerTop {
+                        width: 100%;
+                        display: flex;
+                        justify-content: space-evenly;
+                    }
+                    .linksContainerBottom {
+                        width: 100%;
+                        display: flex;
+                        justify-content: space-evenly;
+                    }
+                }
+            }
+            #languagesContainer {
+                font-size: calc(18px - 3*2px);
+                #germanContainer {
+                    width: calc(40px - 3*5px);
+                    height: calc(40px - 3*5px);
+                }
+                #englishContainer {
+                    width: calc(40px - 3*5px);
+                    height: calc(40px - 3*5px);
+                }
+            }
+        }
+    }
+}
+@media (max-width: 375px) {
+    #header {
+        display: none;
+    }
+}

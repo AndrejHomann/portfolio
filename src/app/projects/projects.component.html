@@ -1,0 +1,262 @@
+<div id="projects" [@flip]="isVisible ? 'flipped' : 'unflipped'" appIntersectionObserver (intersecting)="onIntersection($event)">
+    <h1>{{ projectsTemplateService.languageData[language].projectTitle }}</h1>
+    <div id="projectsContainer">
+
+        <div id="tabContainer">
+            <div id="joinTabNameContainer" (click)="showJoin()" class="mark">
+                <span id="joinTab" class="tabName" >1. Join</span>
+            </div>
+            <div id="eplTabNameContainer" (click)="showEpl()" class="unmark">
+                <span id="eplTab" class="tabName" >2. EPL</span>
+            </div>
+        </div>
+
+        <div id="joinContainer">
+            <div id="join">
+                <div class="projectInfo">
+                    <div class="bulletPointContainer">
+                        <div class="bulletPoint"></div>
+                        <div class="bulletPointText">
+                            <div class="bulletPointTextTop">
+                                <div class="bulletPointHeadline">{{ projectsTemplateService.languageData[language].about }}</div>
+                                <div class="bulletPointFacts">{{ projectsTemplateService.languageData[language].joinDuration }}</div>
+                                <div class="bulletPointFacts">{{ projectsTemplateService.languageData[language].joinType }}</div>
+                            </div>
+                            <div class="bulletPointTextBottom">
+                                <p>{{ projectsTemplateService.languageData[language].joinDescription }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bulletPointContainer">
+                        <div class="bulletPoint"></div>
+                        <div class="bulletPointText">
+                            <div class="bulletPointTextTop">
+                                <div class="bulletPointHeadline">{{ projectsTemplateService.languageData[language].joinOrganizationTitle }}</div>
+                            </div>
+                            <div class="bulletPointTextBottom">
+                                <p>
+                                    {{ projectsTemplateService.languageData[language].joinOrganizationTextOne }} <br>
+                                    {{ projectsTemplateService.languageData[language].joinOrganizationTextTwo }} <br>
+                                    {{ projectsTemplateService.languageData[language].joinOrganizationTextThree }}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bulletPointContainer">
+                        <div class="bulletPoint"></div>
+                        <div class="bulletPointText">
+                            <div class="bulletPointTextTop">
+                                <div class="bulletPointHeadline">{{ projectsTemplateService.languageData[language].joinExperienceTitle }}</div>
+                            </div>
+                            <div class="bulletPointTextBottom">
+                                <p>
+                                    {{ projectsTemplateService.languageData[language].joinExperienceTextOne }} <br>
+                                    {{ projectsTemplateService.languageData[language].joinExperienceTextTwo }} <br>
+                                    {{ projectsTemplateService.languageData[language].joinExperienceTextThree }}
+                                </p>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+                <div class="projectAdvancedInfo">
+                    <div class="projectTechStackHeadline">{{ projectsTemplateService.languageData[language].techTitle }}</div>
+                    <div class="projectTechStackIcons">
+                        <img src="assets/skill_icons/html.svg" alt="html">
+                        <img src="assets/skill_icons/css.svg" alt="css">
+                        <img src="assets/skill_icons/javascript.svg" alt="javaScript">
+                        <img src="assets/skill_icons/firebase.svg" alt="firebase">
+                    </div>
+                    <img id="joinScreenshot" src="assets/projects/join.png" alt="">
+                    <div class="linkButtons">
+                        <a href="https://join.andrej-homann.de" target="_blank"><span class="liveTestButton">Live Test</span></a>
+                        <a href="https://github.com/AndrejHomann/Join" target="_blank"><span class="githubButton">GitHub</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="joinContainerMobile">
+            <div id="join">
+                <div class="projectAdvancedInfo">
+                    <div class="projectTechStackHeadline">{{ projectsTemplateService.languageData[language].techTitle }}</div>
+                    <div class="projectTechStackIcons">
+                        <img src="assets/skill_icons/html.svg" alt="html">
+                        <img src="assets/skill_icons/css.svg" alt="css">
+                        <img src="assets/skill_icons/javascript.svg" alt="javaScript">
+                        <img src="assets/skill_icons/firebase.svg" alt="firebase">
+                        <img src="assets/skill_icons/git.svg" alt="git">
+                    </div>
+                    <img id="joinScreenshot" src="assets/projects/join.png" alt="">
+                </div>
+                <div class="projectInfo">
+                    <div class="bulletPointContainer">
+                        <div class="bulletPoint"></div>
+                        <div class="bulletPointText">
+                            <div class="bulletPointTextTop">
+                                <div class="bulletPointHeadline">{{ projectsTemplateService.languageData[language].about }}</div>
+                                <div class="bulletPointFacts">{{ projectsTemplateService.languageData[language].joinDuration }}</div>
+                                <div class="bulletPointFacts">{{ projectsTemplateService.languageData[language].joinType }}</div>
+                            </div>
+                            <div class="bulletPointTextBottom">
+                                <p>{{ projectsTemplateService.languageData[language].joinDescription }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bulletPointContainer">
+                        <div class="bulletPoint"></div>
+                        <div class="bulletPointText">
+                            <div class="bulletPointTextTop">
+                                <div class="bulletPointHeadline">{{ projectsTemplateService.languageData[language].joinOrganizationTitle }}</div>
+                            </div>
+                            <div class="bulletPointTextBottom">
+                                <p>
+                                    {{ projectsTemplateService.languageData[language].joinOrganizationTextOne }} <br>
+                                    {{ projectsTemplateService.languageData[language].joinOrganizationTextTwo }} <br>
+                                    {{ projectsTemplateService.languageData[language].joinOrganizationTextThree }}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bulletPointContainer">
+                        <div class="bulletPoint"></div>
+                        <div class="bulletPointText">
+                            <div class="bulletPointTextTop">
+                                <div class="bulletPointHeadline">{{ projectsTemplateService.languageData[language].joinExperienceTitle }}</div>
+                            </div>
+                            <div class="bulletPointTextBottom">
+                                <p>
+                                    {{ projectsTemplateService.languageData[language].joinExperienceTextOne }} <br>
+                                    {{ projectsTemplateService.languageData[language].joinExperienceTextTwo }} <br>
+                                    {{ projectsTemplateService.languageData[language].joinExperienceTextThree }}
+                                </p>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+                <div class="projectAdvancedInfo">
+                    <div class="linkButtons">
+                        <a href="https://join.andrej-homann.de" target="_blank"><span class="liveTestButton">Live Test</span></a>
+                        <a href="https://github.com/AndrejHomann/Join" target="_blank"><span class="githubButton">GitHub</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="eplContainer">
+            <div id="epl">
+                <div class="projectInfo">
+                    <div class="bulletPointContainer">
+                        <div class="bulletPoint"></div>
+                        <div class="bulletPointText">
+                            <div class="bulletPointTextTop">
+                                <div class="bulletPointHeadline">{{ projectsTemplateService.languageData[language].about }}</div>
+                                <div class="bulletPointFacts">{{ projectsTemplateService.languageData[language].eplDuration }}</div>
+                                <div class="bulletPointFacts">{{ projectsTemplateService.languageData[language].eplType }}</div>
+                            </div>
+                            <div class="bulletPointTextBottom">
+                                <p>{{ projectsTemplateService.languageData[language].eplDescription }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bulletPointContainer">
+                        <div class="bulletPoint"></div>
+                        <div class="bulletPointText">
+                            <div class="bulletPointTextTop">
+                                <div class="bulletPointHeadline">{{ projectsTemplateService.languageData[language].eplOrganizationTitle }}</div>
+                            </div>
+                            <div class="bulletPointTextBottom">
+                                <p>
+                                    {{ projectsTemplateService.languageData[language].eplOrganizationTextOne }} <br>
+                                    {{ projectsTemplateService.languageData[language].eplOrganizationTextTwo }} <br>
+                                    {{ projectsTemplateService.languageData[language].eplOrganizationTextThree }} 
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bulletPointContainer">
+                        <div class="bulletPoint"></div>
+                        <div class="bulletPointText">
+                            <div class="bulletPointTextTop">
+                                <div class="bulletPointHeadline">{{ projectsTemplateService.languageData[language].eplExperienceTitle }}</div>
+                            </div>
+                            <div class="bulletPointTextBottom">
+                                <p>{{ projectsTemplateService.languageData[language].eplExperienceText }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="projectAdvancedInfo">
+                    <div class="projectTechStackHeadline">{{ projectsTemplateService.languageData[language].techTitle }}</div>
+                    <div class="projectTechStackIcons">
+                        <img src="assets/skill_icons/html.svg" alt="html">
+                        <img src="assets/skill_icons/css.svg" alt="css">
+                        <img src="assets/skill_icons/javascript.svg" alt="javaScript">
+                    </div>
+                    <img id="eplScreenshot" src="assets/projects/epl.png" alt="">
+                    <div class="linkButtons">
+                        <a href="https://epl.andrej-homann.de" target="_blank"><span class="liveTestButton">Live Test</span></a>
+                        <a href="https://github.com/AndrejHomann/epl" target="_blank"><span class="githubButton">GitHub</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="eplContainerMobile">
+            <div id="epl">
+                <div class="projectAdvancedInfo">
+                    <div class="projectTechStackHeadline">{{ projectsTemplateService.languageData[language].techTitle }}</div>
+                    <div class="projectTechStackIcons">
+                        <img src="assets/skill_icons/html.svg" alt="html">
+                        <img src="assets/skill_icons/css.svg" alt="css">
+                        <img src="assets/skill_icons/javascript.svg" alt="javaScript">
+                    </div>
+                    <img id="eplScreenshot" src="assets/projects/epl.png" alt="">
+                </div>
+                <div class="projectInfo">
+                    <div class="bulletPointContainer">
+                        <div class="bulletPoint"></div>
+                        <div class="bulletPointText">
+                            <div class="bulletPointTextTop">
+                                <div class="bulletPointHeadline">{{ projectsTemplateService.languageData[language].about }}</div>
+                                <div class="bulletPointFacts">{{ projectsTemplateService.languageData[language].eplDuration }}</div>
+                                <div class="bulletPointFacts">{{ projectsTemplateService.languageData[language].eplType }}</div>
+                            </div>
+                            <div class="bulletPointTextBottom">
+                                <p>{{ projectsTemplateService.languageData[language].eplDescription }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bulletPointContainer">
+                        <div class="bulletPoint"></div>
+                        <div class="bulletPointText">
+                            <div class="bulletPointTextTop">
+                                <div class="bulletPointHeadline">{{ projectsTemplateService.languageData[language].eplOrganizationTitle }}</div>
+                            </div>
+                            <div class="bulletPointTextBottom">
+                                <p>
+                                    {{ projectsTemplateService.languageData[language].eplOrganizationTextOne }} <br>
+                                    {{ projectsTemplateService.languageData[language].eplOrganizationTextTwo }} <br>
+                                    {{ projectsTemplateService.languageData[language].eplOrganizationTextThree }} 
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bulletPointContainer">
+                        <div class="bulletPoint"></div>
+                        <div class="bulletPointText">
+                            <div class="bulletPointTextTop">
+                                <div class="bulletPointHeadline">{{ projectsTemplateService.languageData[language].eplOrganizationTextThree }}</div>
+                            </div>
+                            <div class="bulletPointTextBottom">
+                                <p>{{ projectsTemplateService.languageData[language].eplOrganizationTextThree }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="projectAdvancedInfo">
+                    <div class="linkButtons">
+                        <a href="https://epl.andrej-homann.de" target="_blank"><span class="liveTestButton">Live Test</span></a>
+                        <a href="https://github.com/AndrejHomann/epl" target="_blank"><span class="githubButton">GitHub</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

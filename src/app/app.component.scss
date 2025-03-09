@@ -1,0 +1,27 @@
+#globalContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+app-top, app-about-me, app-skills, app-projects, app-contact {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(37, 45, 51);
+}
+app-header, app-footer {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(137, 187, 217);
+}
+#routerOutlet {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow-x: hidden;
+}

@@ -1,0 +1,77 @@
+
+<div id="contact" [@fadeIn]="isVisible ? 'visible' : 'hidden'" appIntersectionObserver (intersecting)="onIntersection($event)">
+    <div id="contactHeaderContainer">
+        <div id="contactHeaderContainerLeft">
+            <h1>{{ contactTemplateService.languageData[language].contactTitle }}</h1>
+        </div>
+        <div id="contactHeaderContainerRight">
+            <a id="arrowUpContainer" href="#top">
+                <img id="arrowUp" src="assets/other/Arrow.svg" alt="arrowUp">
+            </a>
+        </div>
+    </div>
+
+    <div id="contactContainer">
+        <div id="contactContainerTop">
+            <div id="contactContainerTopText">
+                <p>{{ contactTemplateService.languageData[language].introText }}</p>
+            </div>
+            <div id="contactContainerTopMailTel">
+                <a id="contactContainerTopMail" href="mailto:andrej.homann1990@gmail.com?subject=Kontaktanfrage">
+                    <img id="contactEmailImage" src="../../assets/contact_icons/mail.svg" alt="mail">
+                    <span id="eMailDesktop">E-Mail: andrej.homann1990gmail.com</span>
+                    <span id="eMailMobile">E-Mail</span>
+                </a>
+                <a id="contactContainerTopTel" href="tel:+4917684151327">
+                    <img id="contactPhoneImage" src="../../assets/contact_icons/phone.png" alt="phone">
+                    <span id="phoneDesktop">{{ contactTemplateService.languageData[language].phoneLabel }}: 0176 8415 1327</span>
+                    <span id="phoneMobile">{{ contactTemplateService.languageData[language].phoneLabel }}</span>
+                </a>
+            </div>
+        </div>
+        <div id="contactContainerBottom">
+            <div id="contactContainerBottomNameMail">
+                <div id="contactContainerBottomName">
+                    <span>{{ contactTemplateService.languageData[language].nameLabel }}</span>
+                    <input #nameInput id="nameInput" type="text">
+                    <span id="nameInputInfoText" class="inputValidationText hide">{{ contactTemplateService.languageData[language].nameValidationText }}</span>
+                </div>
+                <div id="contactContainerBottomMail">
+                    <span>{{ contactTemplateService.languageData[language].emailLabel }}</span>
+                    <input #mailInput id="mailInput" type="text">
+                    <span id="mailInputInfoText" class="inputValidationText hide">{{ contactTemplateService.languageData[language].emailValidationText }}</span>
+                </div>
+            </div>
+            <div id="contactContainerBottomMessage">
+                <div id="contactContainerBottomMessageContainer">
+                    <span>{{ contactTemplateService.languageData[language].messageLabel }}</span>
+                    <textarea #messageInput id="messageInput" rows="5" maxlength="1000"></textarea>
+                    <span id="messageInputInfoText" class="inputValidationText hide">{{ contactTemplateService.languageData[language].messageValidationText }}</span>
+                </div>
+                <div id="contactContainerBottomCheckbox">
+                    <label #checkbox id="checkbox">
+                        <input id="checkboxInput" type="checkbox">
+                        <span id="privacyMessage">
+                            {{ contactTemplateService.languageData[language].privacyPolicyTextPartOne }} 
+                            <a href="#" (click)="showPrivacyPage($event)">{{ contactTemplateService.languageData[language].privacyPolicyTextPartTwo }}</a> 
+                            {{ contactTemplateService.languageData[language].privacyPolicyTextPartThree }}
+                        </span>
+                    </label>
+                    <span id="ppCheckboxInfoText" class="inputValidationTextPrPo hide">{{ contactTemplateService.languageData[language].privacyPolicyValidationText }}</span>
+                </div>
+                <div id="send">
+                    <button #sendButton id="sendButton" (click)="sendButtonClicked()">{{ contactTemplateService.languageData[language].sendLabel }}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="popupOverlay" class="hidePopup" (click)="closePopup()">
+        <div id="popupInfoMessageSent">
+            <h2>Your message was sent.</h2>
+            <p>I will answer you as soon as possible.</p>
+            <button id="popupCloseButton" (click)="closePopup()">OK</button>
+        </div>
+    </div>
+    
+</div> 

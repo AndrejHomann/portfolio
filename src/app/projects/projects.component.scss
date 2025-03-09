@@ -1,0 +1,253 @@
+#projects {
+    width: 100vw;
+    max-width: 1920px;
+    // height: 900px;
+    background-color: rgb(37, 45, 51);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    h1 {
+        font-family: 'Anta';
+        font-size: 60px;
+        font-weight: 400;
+        color: rgb(137, 187, 217);
+        margin-top: 100px;
+        margin-bottom: 50px;
+    }
+    #projectsContainer {
+        width: 100%; 
+        // min-height: 655px;
+        #tabContainer {
+            width: 80%;
+            display: flex;
+            justify-content: left;
+            align-items: center;
+            margin-left: 10%;
+            #joinTabNameContainer {
+                width: 160px;
+                height: 80px;
+            }
+            #eplTabNameContainer {
+                width: 160px;
+                height: 80px;
+            }
+            .tabNameContainer {
+                .tabName {
+                    &:hover {
+                        color: white;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+        #joinContainer {
+            display: flex;
+            width: 100%;
+            background-color: rgb(45, 57, 64);
+            #join {
+                width: 80%;
+                height: 80%;
+                display: flex;
+                margin-left: 10%;
+                padding-top: 2%;
+                #joinScreenshot {
+                    width: 400px;
+                    height: 240px;
+                    border-radius: 30px;
+                }
+            }
+        }
+        #joinContainerMobile {
+            display: none;
+            width: 100%;
+            height: 100%;
+            background-color: rgb(45, 57, 64);
+            #join {
+                width: 80%;
+                height: 80%;
+                display: flex;
+                flex-direction: column;
+                margin-left: 10%;
+                padding-top: 2%;
+                gap: 20px;
+                #joinScreenshot {
+                    width: 400px;
+                    height: 240px;
+                    border-radius: 30px;
+                }
+            }
+        }
+        #eplContainer {
+            display: none;
+            width: 100%;
+            background-color: rgb(45, 57, 64);
+            #epl {
+                height: 80%;
+                width: 80%;
+                display: flex;
+                margin-left: 10%;
+                padding-top: 2%;
+                #eplScreenshot {
+                    width: 400px;
+                    height: 240px;
+                    border-radius: 30px;
+                }
+            }
+        }
+        #eplContainerMobile {
+            display: none;
+            width: 100%;
+            height: 100%;
+            background-color: rgb(45, 57, 64);
+            #epl {
+                width: 80%;
+                height: 80%;
+                display: flex;
+                flex-direction: column;
+                margin-left: 10%;
+                padding-top: 2%;
+                gap: 20px;
+                #eplScreenshot {
+                    width: 400px;
+                    height: 240px;
+                    border-radius: 30px;
+                }
+            }
+        }
+    }
+}
+.mark {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10vw;
+    height: 5vw;
+    font-family: 'Josefin Sans';
+    font-weight: 400;
+    font-size: 30px;
+    color: white;
+    background-color: rgb(45, 57, 64);
+    border-top-left-radius: 30%;
+    border-top-right-radius: 30%;
+    cursor: pointer;
+}
+.unmark {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10vw;
+    height: 5vw;
+    font-family: 'Josefin Sans';
+    font-weight: 400;
+    font-size: 30px;
+    color: rgba(137, 188, 217, 1);
+    background-color: rgb(37, 45, 51);
+    border-top-left-radius: 30%;
+    border-top-right-radius: 30%;
+    cursor: pointer;
+}
+.show {
+    display: flex;
+}
+.hide {
+    display: none;
+}
+.projectInfo {
+    display: flex;
+    flex-direction: column;
+    margin-right: 40px;
+    .bulletPointContainer {
+        display: flex;
+        align-items: start;
+        gap: 5%;
+        width: 100%;
+        // flex-grow: 1;
+        // align-self: stretch;
+        .bulletPoint {
+            min-width: 25px;
+            min-height: 22px;
+            margin-top: 4px;
+            background-color: rgba(137, 188, 217, 1);
+            border-radius: 100%;
+        }
+        .bulletPointText {
+            display: flex;
+            align-items: start;
+            flex-direction: column;
+            width: 100%;
+            height: 100%;
+            color: white;
+            font-family: 'Josefin Sans';
+            font-weight: 400;
+            .bulletPointTextTop {
+                display: flex;
+                justify-content: left;
+                align-items: end; 
+                gap: 10px;
+                flex-wrap: wrap;
+                .bulletPointHeadline {
+                    min-width: 200px;
+                    font-size: 28px;
+                }
+                .bulletPointFacts {
+                    min-width: 150px;
+                    font-size: 18px;
+                    margin-left: 10px; 
+                }
+            }
+            .bulletPointTextBottom {
+                display: flex;
+                height: 100%;
+            }
+        }
+    }
+}
+.projectAdvancedInfo {
+    font-family: 'Josefin Sans';
+    font-weight: 400;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    .projectTechStackHeadline {
+        color: white;
+    }
+    .projectTechStackIcons img {
+        width: 50px;
+        height: 50px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    .linkButtons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        gap: 25px;
+        a, span {
+            text-decoration: none;
+        }
+        .liveTestButton, .githubButton{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(45, 57, 64);
+            width: 132px;
+            height: 48px;
+            color: rgb(137, 187, 217);
+            border: 1px rgb(137, 187, 217) solid;
+            border-top-left-radius: 25px;
+            border-top-right-radius: 25px;
+            border-bottom-left-radius: 25px;
+            border-bottom-right-radius: 25px;
+            &:hover {
+                background-color: rgb(137, 187, 217);;
+                color: rgb(45, 57, 64);
+                cursor: pointer;
+            }
+        }
+    }
+}

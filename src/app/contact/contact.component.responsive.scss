@@ -1,0 +1,284 @@
+@media (max-width: 1040px) {
+    #contact {
+        #contactHeaderContainer {
+            #contactHeaderContainerLeft {
+                h1 {
+                    font-size: calc(60px - 10px);
+                }
+            }
+        }
+        #contactContainer {
+            #contactContainerBottom {
+                #contactContainerBottomNameMail {
+                    width: 103%;
+                }
+                #contactContainerBottomMessage {
+                    #send {
+                        width: 104%;
+                    }
+                } 
+            }
+        }
+    }
+}
+@media (max-width: 830px) {
+    #contact {
+        #contactHeaderContainer {
+            #contactHeaderContainerLeft {
+                h1 {
+                    font-size: calc(60px - 2*10px);
+                }
+            }
+            #contactHeaderContainerRight {
+                #arrowUpContainer {
+                    width: calc(40px * 0.8);
+                    height: calc(80px * 0.8);
+                    #arrowUp {
+                        transform: scale(0.8) rotate(180deg);
+                    }
+                }
+            }
+        }
+        #contactContainer {
+            #contactContainerTop{
+                #contactContainerTopText {
+                    width: 80%;
+                    font-size: calc(18px - 2px);
+                }
+                #contactContainerTopMailTel {
+                    width: 20%;
+                    align-items: center;
+                    #contactContainerTopMail {
+                        gap: 10px;
+                        #contactEmailImage {
+                            width: calc(30px * 0.8);
+                            height: calc(30px * 0.8);
+                        }
+                        #eMailDesktop {
+                            display: none;
+                        }
+                        #eMailMobile {
+                            display: flex;
+                            font-size: calc(20px - 2px);
+                        }
+                    }
+                    #contactContainerTopTel {
+                        gap: 10px;
+                        #contactPhoneImage {
+                            width: calc(30px * 0.8);
+                            height: calc(30px * 0.8);
+                        }
+                        #phoneDesktop {
+                            display: none;
+                        }
+                        #phoneMobile {
+                            display: flex;
+                            font-size: calc(20px - 2px);
+                        }
+                    }
+                }
+            }
+            #contactContainerBottom {
+                #contactContainerBottomNameMail {
+                    width: 104%;
+                }
+                #contactContainerBottomMessage {
+                    #send {
+                        #sendButton {
+                            width: calc(80px * 0.85);
+                            height: calc(45px * 0.85);
+                        }
+                    }
+                }
+            }     
+        }
+    }
+}
+@media (max-width: 770px) {
+    #contact {
+        // padding-bottom: 50px;
+        #contactHeaderContainer {
+            // margin-top: 50px;
+            #contactHeaderContainerLeft {
+                h1 {
+                    margin-bottom: 50px;
+                    margin-right: 10%;
+                }
+            }
+        }
+    }
+}
+@media (max-width: 475px) {
+    #contact {
+        #contactHeaderContainer {
+            margin-top: 50px;
+            margin-bottom: 50px;
+            #contactHeaderContainerLeft {
+                h1 {
+                    margin: 0;
+                    padding: 0;
+                    font-size: calc(60px - 28px);
+                    margin-right: -10%;
+                }
+            }
+            #contactHeaderContainerRight {
+                display: flex;
+                align-items: flex-end;
+                margin-bottom: 25px;
+                #arrowUpContainer {
+                    width: calc(40px * 0.6);
+                    height: calc(80px * 0.6);
+                    #arrowUp {
+                        transform: scale(0.6) rotate(180deg);
+                    }
+                }
+            }
+        }
+        #contactContainer {
+            width: 80%;
+            #contactContainerTop{
+                display: flex;
+                flex-direction: column-reverse;
+                width: 100%;
+                margin-bottom: 20px;
+                gap: 15px;
+                #contactContainerTopText {
+                    width: 100%;
+                    font-size: calc(18px - 2px);
+                }
+                #contactContainerTopMailTel {
+                    width: 100%;
+                    align-items: flex-start;
+                    margin-left: 0;
+                    #contactContainerTopMail {
+                        gap: 10px;
+                        #contactEmailImage {
+                            width: calc(30px * 0.6);
+                            height: calc(30px * 0.6);
+                        }
+                        #eMailDesktop {
+                            display: flex;
+                            font-size: calc(20px - 4px);
+                        }
+                        #eMailMobile {
+                            display: none;
+                        }
+                    }
+                    #contactContainerTopTel {
+                        gap: 10px;
+                        #contactPhoneImage {
+                            width: calc(30px * 0.6);
+                            height: calc(30px * 0.6);
+                        }
+                        #phoneDesktop {                            
+                            display: flex;
+                            font-size: calc(20px - 4px);
+                        }
+                        #phoneMobile {
+                            display: none;
+                        }
+                    }
+                }
+            } 
+            #contactContainerBottom {
+                width: 100%;
+                #contactContainerBottomNameMail {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                    margin-bottom: 10px;
+                    #contactContainerBottomName {
+                        width: 95%;
+                    }
+                    #contactContainerBottomMail {
+                        width: 95%;
+                    }    
+                }
+                #contactContainerBottomMessage {
+                    #contactContainerBottomMessageContainer {
+                        #messageInput {
+                            width: 90%;
+                        }
+                    }
+                    #contactContainerBottomCheckbox {
+                        #checkbox {
+                            #checkboxInput[type=checkbox] {
+                                min-width: calc(25px * 0.8);
+                                min-height: calc(25px * 0.8);
+                                &:checked::before, &:checked::after {
+                                    height: 2px;
+                                    margin-top: -3px;
+                                    margin-left: -2px;
+                                    top: 10px;
+                                    width: 20px;
+                                }
+                            }
+                            #privacyMessage {
+                                font-size: 16px;
+                            }
+                        }
+                    }
+                    #send {
+                        width: 96%;
+                        #sendButton {
+                            width: calc(80px * 0.7);
+                            height: calc(45px * 0.7);
+                        }
+                    }
+                } 
+            }
+        }
+    }
+    .inputValidationTextPrPo {
+        margin-left: 36px;
+    }
+}
+@media (max-width: 375px) {
+    #contact {
+        #contactHeaderContainer {
+            #contactHeaderContainerLeft {
+                h1 {
+                    margin-right: -10%;
+                }
+            }
+        }
+        #contactContainer {
+            #contactContainerBottom {
+                #contactContainerBottomNameMail {
+                    width: 102%;  
+                }
+                #contactContainerBottomMessage {
+                    #contactContainerBottomCheckbox {
+                        #checkbox {
+                            #checkboxInput[type="checkbox"] {
+                                min-width: calc(25px * 0.8);
+                                min-height: calc(25px * 0.8);
+                                &:checked::before, &:checked::after {
+                                    height: 2px;
+                                    margin-top: -3px;
+                                    margin-left: -2px;
+                                    top: 10px;
+                                    width: 20px;
+                                }
+                            }
+                            #privacyMessage {
+                                font-size: 16px;
+                            }
+                        }
+                    }
+                    #send {
+                        width: 96%;
+                        #sendButton {
+                            width: calc(80px * 0.7);
+                            height: calc(45px * 0.7);
+                        }
+                    }
+                } 
+            }
+        }
+    }
+    .inputValidationTextPrPo {
+        margin-left: 36px;
+    }
+}

@@ -1,0 +1,21 @@
+<div id="globalContainer" *ngIf="!isImprintPage&&!isPrivacyPage">
+    <app-top (languageChanged)="onLanguageChanged($event)" [language]="selectedLanguage"></app-top>
+    <app-header (languageChanged)="onLanguageChanged($event)" [language]="selectedLanguage" [legalDesktop]="false" [legalMobile]="false"></app-header>
+    <app-about-me [language]="selectedLanguage"></app-about-me> 
+    <app-skills [language]="selectedLanguage"></app-skills>
+    <app-projects [language]="selectedLanguage"></app-projects>
+    <app-contact [language]="selectedLanguage" (privacyClicked)="onShowPrivacyPage($event)"></app-contact>
+    <app-footer [language]="selectedLanguage" (imprintClicked)="onShowImprintPage($event)" (privacyClicked)="onShowPrivacyPage($event)"></app-footer>
+</div>
+
+<div id="routerOutlet" *ngIf="isImprintPage && !isMobile || isPrivacyPage && !isMobile">
+    <app-header (languageChanged)="onLanguageChanged($event)" [language]="selectedLanguage" [legalDesktop]="true" [legalMobile]="false"></app-header>
+    <router-outlet></router-outlet>
+    <app-footer [language]="selectedLanguage" (imprintClicked)="onShowImprintPage($event)" (privacyClicked)="onShowPrivacyPage($event)"></app-footer>
+</div>
+
+<div id="routerOutlet" *ngIf="isImprintPage && isMobile || isPrivacyPage && isMobile">
+    <app-header (languageChanged)="onLanguageChanged($event)" [language]="selectedLanguage" [legalDesktop]="false" [legalMobile]="true"></app-header>
+    <router-outlet></router-outlet>
+    <app-footer [language]="selectedLanguage" (imprintClicked)="onShowImprintPage($event)" (privacyClicked)="onShowPrivacyPage($event)"></app-footer>
+</div>
