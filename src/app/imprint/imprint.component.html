@@ -1,7 +1,7 @@
 <div id='imprint'>
     <div id='imprintContainer'>
         <h1>{{ imprintTemplateService.languageData[language].imprintTitle }}</h1>
-            <a class="arrowLeftContainerDesktop" href="#top">
+            <a class="arrowLeftContainerDesktop" (click)="navigateToHome()">
                 <div class="arrowLeftBorder">
                     <img class="arrowLeft" src="assets/other/Arrow.svg" alt="arrowLeft">
                 </div>
@@ -29,7 +29,7 @@
                     {{ imprintTemplateService.languageData[language].text4 }}
                 </em></p>
             </section>
-            <a class="arrowLeftContainerDesktop" href="#top">
+            <a class="arrowLeftContainerDesktop" (click)="navigateToHome()">
                 <div class="arrowLeftBorder">
                     <img class="arrowLeft" src="assets/other/Arrow.svg" alt="arrowLeft">
                 </div>

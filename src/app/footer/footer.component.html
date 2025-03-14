@@ -5,7 +5,7 @@
             <a (click)="showPrivacyPage($event)">{{ footerTemplateService.languageData[language].privacy }}</a>
             <p href="">&copy; Andrej Homann 2025</p>
         </div>
-        <a id="footerMiddle" href="#top">
+        <a id="footerMiddle" (click)="navigateTo('top')">
             <img id="profileLogo" src="assets/logo/4.png" alt="profile logo">
         </a>
         <div id="footerRight">
@@ -13,7 +13,7 @@
             <a class="socialMediaIconsContainer" href="mailto:andrej.homann1990@gmail.com?subject=Kontaktanfrage"><img id="emailIcon" class="socialMediaIcons" src="assets/media_icons/mail.png" alt="eMail"></a>
             <a class="socialMediaIconsContainer" href="https://www.linkedin.com/in/andrej-homann-801388101/" target="_blank"><img id="linkedInIcon" class="socialMediaIcons" src="assets/media_icons/linked.png" alt="linkedIn"></a>
         </div>
-        <a id="footerMiddleMobile" href="#top">
+        <a id="footerMiddleMobile" (click)="navigateTo('top')">
             <img id="profileLogoMobile" src="assets/logo/4.png" alt="profile logo">
         </a>
         <div id="footerRightMobile">

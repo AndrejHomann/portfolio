@@ -1,3 +1,10 @@
+@media (min-height: 1280px) {
+    #imprint {
+        height: calc(100vh - 400px);
+        overflow-y: hidden;
+    }
+}
+
 @media (max-width: 770px) {
     #imprint {
         margin: 0;
@@ -11,6 +18,7 @@
         flex-direction: column;
         padding-top: 50px;
         padding-bottom: 50px;
+        height: auto;
         #imprintContainer {
             width: 80%;
             display: flex;

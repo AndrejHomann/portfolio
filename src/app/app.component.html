@@ -8,13 +8,13 @@
     <app-footer [language]="selectedLanguage" (imprintClicked)="onShowImprintPage($event)" (privacyClicked)="onShowPrivacyPage($event)"></app-footer>
 </div>
 
-<div id="routerOutlet" *ngIf="isImprintPage && !isMobile || isPrivacyPage && !isMobile">
+<div class="routerOutlet" *ngIf="isImprintPage && !isMobile || isPrivacyPage && !isMobile">
     <app-header (languageChanged)="onLanguageChanged($event)" [language]="selectedLanguage" [legalDesktop]="true" [legalMobile]="false"></app-header>
     <router-outlet></router-outlet>
     <app-footer [language]="selectedLanguage" (imprintClicked)="onShowImprintPage($event)" (privacyClicked)="onShowPrivacyPage($event)"></app-footer>
 </div>
 
-<div id="routerOutlet" *ngIf="isImprintPage && isMobile || isPrivacyPage && isMobile">
+<div class="routerOutlet" *ngIf="isImprintPage && isMobile || isPrivacyPage && isMobile">
     <app-header (languageChanged)="onLanguageChanged($event)" [language]="selectedLanguage" [legalDesktop]="false" [legalMobile]="true"></app-header>
     <router-outlet></router-outlet>
     <app-footer [language]="selectedLanguage" (imprintClicked)="onShowImprintPage($event)" (privacyClicked)="onShowPrivacyPage($event)"></app-footer>

@@ -11,16 +11,16 @@
                 <img id="profilePicture" src="assets/andrej.png" alt="profile photo">
                 <div id="mobileMenu" class="hide">
                     <div id="linksContainer" *ngIf="language === 'english'">
-                        <a href="#aboutMe">About Me</a>
-                        <a href="#skills">Skills</a>
-                        <a href="#projects">Projects</a>
-                        <a href="#contact">Contact</a>
+                        <a (click)="navigateTo('aboutMe')">About Me</a>
+                        <a (click)="navigateTo('skills')">Skills</a>
+                        <a (click)="navigateTo('projects')">Projects</a>
+                        <a (click)="navigateTo('contact')">Contact</a>
                     </div> 
                     <div id="linksContainer" *ngIf="language === 'german'">
-                        <a href="#aboutMe">Über Mich</a>
-                        <a href="#skills">Skills</a>
-                        <a href="#projects">Projekte</a>
-                        <a href="#contact">Kontakt</a>
+                        <a (click)="navigateTo('aboutMe')">Über Mich</a>
+                        <a (click)="navigateTo('skills')">Skills</a>
+                        <a (click)="navigateTo('projects')">Projekte</a>
+                        <a (click)="navigateTo('contact')">Kontakt</a>
                     </div> 
                     <div id="languagesContainer">
                         <div id="germanContainer" (click)="showGerman()" class="unmark">
@@ -48,12 +48,12 @@
                 <span id="name">Andrej Homann</span>
                 <span id="jobTitle">FRONTEND DEVELOPER</span>
             </div>
-            <a id="arrowDownContainerDesktop" href="#header">
+            <a id="arrowDownContainerDesktop" (click)="navigateTo('aboutMe')">
                 <div class="arrowDownBorder">
                     <img class="arrowDown" src="assets/other/Arrow.svg" alt="arrowDown">
                 </div>
             </a>
-            <a id="arrowDownContainerMobile" href="#aboutMe">
+            <a id="arrowDownContainerMobile" (click)="navigateTo('aboutMe')">
                 <div class="arrowDownBorder">
                     <img class="arrowDown" src="assets/other/Arrow.svg" alt="arrowDown">
                 </div>

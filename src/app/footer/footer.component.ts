@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { FooterTemplateService } from './footer.template.service';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 import { IntersectionObserverDirective } from '../intersection-observer.directive';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-footer',
@@ -30,7 +31,11 @@ export class FooterComponent {
 
   @Input() language: 'english' | 'german' = 'english';
 
-  constructor(private router: Router, public footerTemplateService: FooterTemplateService) {}
+  constructor(
+    private router: Router, 
+    public footerTemplateService: FooterTemplateService,
+    private appComponent: AppComponent
+  ) {}
 
   public isImprintPage = false;
   @Output() imprintClicked = new EventEmitter<boolean>();
@@ -50,6 +55,21 @@ export class FooterComponent {
     this.isPrivacyPage = true;
     this.router.navigate(['/privacy', this.language]).then(() => {
       window.scrollTo({ top: 0 });
+    });
+  }
+
+  navigateTo(section: string) {
+    this.router.navigate([], { fragment: section }).then(() => {
+      setTimeout(() => {
+        const element = document.getElementById(section);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } else {
+          console.warn('Element not found:', section);
+        }
+      }, 100);
+      this.appComponent.resetImprintPage();
+      this.appComponent.resetPrivacyPage();
     });
   }
 }

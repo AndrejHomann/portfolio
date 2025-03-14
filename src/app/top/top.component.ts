@@ -1,6 +1,8 @@
-import { Component, ViewChild, ElementRef, Output, EventEmitter, Input } from '@angular/core';
+import { Component, ViewChild, ElementRef, Output, EventEmitter, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common'; 
 import { LanguageService } from '../language.service';
+import { Router } from '@angular/router';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-top',
@@ -10,12 +12,17 @@ import { LanguageService } from '../language.service';
   styleUrls: ['./top.component.scss', './top.component.responsive.scss']
 })
 
-export class TopComponent {
+export class TopComponent implements OnInit {
   @Input() language: 'english' | 'german' = 'english';
   @Output() languageChanged = new EventEmitter<'english' | 'german'>();
   @ViewChild('mobileMenu') mobileMenu!: ElementRef;
 
-  constructor(private elRef: ElementRef, private languageService: LanguageService) {}
+  constructor(
+    private elRef: ElementRef, 
+    private languageService: LanguageService, 
+    private router: Router,
+    private appComponent: AppComponent
+  ) {}
   
   menuOpen = false;
   hamburgerAnimation() {
@@ -34,11 +41,7 @@ export class TopComponent {
   @ViewChild('germanContainer', { static: false }) germanButton!: ElementRef;
   @ViewChild('englishContainer', { static: false }) englishButton!: ElementRef;
 
-  showGerman() {
-    if (this.language !== "german") {
-      this.language = "german";
-      this.languageChanged.emit(this.language); // Parent Component benachrichtigen
-    }
+  highlightDeButton() {
     const { nativeElement } = this.elRef;
     nativeElement.querySelector('#germanContainer').classList.toggle('mark', true);
     nativeElement.querySelector('#germanContainer').classList.toggle('unmark', false);
@@ -46,15 +49,9 @@ export class TopComponent {
     nativeElement.querySelector('#englishContainer').classList.toggle('unmark', true);
     nativeElement.querySelector('#german').style.color = "white";
     nativeElement.querySelector('#english').style.color = "black";
-
-    this.languageService.setLanguage(this.language);
   }
 
-  showEnglish() {
-    if (this.language !== "english") {
-      this.language = "english";
-      this.languageChanged.emit(this.language); // Parent Component benachrichtigen
-    }
+  highlightEnButton() {
     const { nativeElement } = this.elRef;
     nativeElement.querySelector('#germanContainer').classList.toggle('mark', false);
     nativeElement.querySelector('#germanContainer').classList.toggle('unmark', true);
@@ -62,7 +59,63 @@ export class TopComponent {
     nativeElement.querySelector('#englishContainer').classList.toggle('unmark', false);
     nativeElement.querySelector('#german').style.color = "black";
     nativeElement.querySelector('#english').style.color = "white";
+  }
 
+  ngOnInit() {
+    if (this.language == "german") {
+      this.highlightDeButton();
+    }
+    if (this.language == "english") {
+      this.highlightEnButton();
+    }
+  }
+
+  showGerman() {
+    if (this.language !== "german") {
+      this.language = "german";
+      this.languageChanged.emit(this.language); 
+    }
+    this.highlightDeButton();
     this.languageService.setLanguage(this.language);
+  }
+
+  showEnglish() {
+    if (this.language !== "english") {
+      this.language = "english";
+      this.languageChanged.emit(this.language); 
+    }
+    this.highlightEnButton();
+    this.languageService.setLanguage(this.language);
+  }
+
+  // navigateTo(section: string) {
+  //   this.router.navigate([], { fragment: section }).then(() => {
+  //     setTimeout(() => {
+  //       const element = document.getElementById(section);
+  //       if (element) {
+  //         element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  //       } else {
+  //         console.warn('Element not found:', section);
+  //       }
+  //     }, 100);
+  //     this.appComponent.resetImprintPage();
+  //     this.appComponent.resetPrivacyPage();
+  //   });
+  // }
+
+  navigateTo(section: string) {
+    this.router.navigate([], { fragment: section }).then(() => {
+      setTimeout(() => {
+        const element = document.getElementById(section);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          setTimeout(() => {
+            window.scrollBy(0, 100);
+          }, 700);
+        } else {
+          console.warn('Element not found:', section);
+        }
+      }, 100);
+    });
   }
 }

@@ -1,0 +1,7 @@
+runtime: php81  
+
+env: standard
+
+handlers:
+  - url: /sendMail.php
+    script: auto

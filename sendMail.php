@@ -35,3 +35,37 @@ switch ($_SERVER['REQUEST_METHOD']) {
             header("Allow: POST", true, 405);
             exit;
     } 
+
+
+// $host = 'smtp.gmail.com';
+// $port = 587;
+// $username = 'your_email@gmail.com';
+// $password = 'your_password';
+
+// $headers = array();
+// $headers[] = 'MIME-Version: 1.0';
+// $headers[] = 'Content-type: text/html; charset=utf-8';
+// $headers[] = 'From: noreply@mywebsite.com';
+
+// $message = "From:" . $name . "<br>" . $message;
+
+// // Set up the SMTP connection
+// $mail = new PHPMailer(true);
+// $mail->isSMTP();
+// $mail->Host = $host;
+// $mail->Port = $port;
+// $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+// $mail->SMTPAuth = true;
+// $mail->Username = $username;
+// $mail->Password = $password;
+// $mail->setFrom($username, 'WebApp');
+// $mail->addAddress($recipient, 'Recipient Name');
+// $mail->Subject = $subject;
+// $mail->Body = $message;
+// $mail->AltBody = strip_tags($message);
+
+// if(!$mail->send()) {
+//     echo 'Message could not be sent. Mailer Error: ' . $mail->ErrorInfo;
+// } else {
+//     echo 'Message sent successfully';
+// }

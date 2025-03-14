@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, ElementRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router, RouterModule, RouterOutlet } from '@angular/router';
 import { TopComponent } from './top/top.component'; 
@@ -34,7 +34,10 @@ import { PrivacyComponent } from './privacy/privacy.component';
 
 export class AppComponent {
   title = 'testproject';
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+    private elRef: ElementRef, 
+  ) {}
 
   selectedLanguage: 'english' | 'german' = 'english';
   onLanguageChanged(language: 'english' | 'german') {
@@ -52,10 +55,37 @@ export class AppComponent {
     this.isPrivacyPage = true;
   }
 
+  resetImprintPage() {
+    this.isImprintPage = false;
+  }
+  resetPrivacyPage() {
+    this.isPrivacyPage = false;
+  }
+
   isMobile = window.innerWidth <= 375;
 
   @HostListener('window:resize', ['$event'])
   onResize(event: Event) {
     this.isMobile = (event.target as Window).innerWidth <= 375;
+  }
+
+  @HostListener('window:scroll', ['$event'])
+  onWindowScroll() {
+    const { nativeElement } = this.elRef;
+    const headerElement = nativeElement.querySelector('#header');
+    const bodyElement = document.body;
+    if(this.isImprintPage == true || this.isPrivacyPage == true) {
+      headerElement.classList.add('fixed');
+      bodyElement.style.paddingTop = `100px`;
+    }
+    if(this.isImprintPage == false && this.isPrivacyPage == false) {
+      if (window.scrollY > window.innerHeight) {
+        headerElement.classList.add('fixed');
+        bodyElement.style.paddingTop = `100px`;
+      } else {
+        headerElement.classList.remove('fixed');
+        bodyElement.style.paddingTop = `0`;
+      }
+    }
   }
 }

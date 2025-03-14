@@ -1,7 +1,7 @@
 <div id='privacy'>
     <div id='privacyContainer'>
         <h1>{{ privacyTemplateService.languageData[language].privacyTitle }}</h1>
-        <a class="arrowLeftContainerDesktop" href="#top">
+        <a class="arrowLeftContainerDesktop" (click)="navigateToHome()">
             <div class="arrowLeftBorder">
                 <img class="arrowLeft" src="assets/other/Arrow.svg" alt="arrowLeft">
             </div>
@@ -105,7 +105,7 @@
                     (Version #2024-10-25).
                 </em></p>
         </div>
-        <a class="arrowLeftContainerDesktop" href="#top">
+        <a class="arrowLeftContainerDesktop" (click)="navigateToHome()">
             <div class="arrowLeftBorder">
                 <img class="arrowLeft" src="assets/other/Arrow.svg" alt="arrowLeft">
             </div>

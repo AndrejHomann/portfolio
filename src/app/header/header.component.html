@@ -2,26 +2,26 @@
 [ngStyle]="{'display': (legalDesktop || legalMobile || windowWidth  > 375) ? 'flex' : 'none'}"  
 [@fadeIn]="isVisible ? 'visible' : 'hidden'" appIntersectionObserver (intersecting)="onIntersection($event)">
     <div id="headerContainer">
-        <a href="#top">
+        <a (click)="navigateTo('top')">
             <img id="navLogo" src="assets/logo/4.png" alt="logo">
         </a>
         <div id="oneLine">
             <div class="linksContainer">
-                <a href="#aboutMe" class="menuButton">{{ headerTemplateService.languageData[language].aboutMeTitle }}</a>
-                <a href="#skills" class="menuButton">{{ headerTemplateService.languageData[language].skillsTitle }}</a>
-                <a href="#projects" class="menuButton">{{ headerTemplateService.languageData[language].projectsTitle }}</a>
-                <a href="#contact" class="menuButton">{{ headerTemplateService.languageData[language].contactTitle }}</a>
+                <a (click)="navigateTo('aboutMe')" class="menuButton">{{ headerTemplateService.languageData[language].aboutMeTitle }}</a>
+                <a (click)="navigateTo('skills')" class="menuButton">{{ headerTemplateService.languageData[language].skillsTitle }}</a>
+                <a (click)="navigateTo('projects')" class="menuButton">{{ headerTemplateService.languageData[language].projectsTitle }}</a>
+                <a (click)="navigateTo('contact')" class="menuButton">{{ headerTemplateService.languageData[language].contactTitle }}</a>
             </div> 
         </div>
         <div id="twoLines">
             <div class="linksContainer">
                 <div class="linksContainerTop">
-                    <a href="#aboutMe" class="menuButtonTop">{{ headerTemplateService.languageData[language].aboutMeTitle }}</a>
-                    <a href="#skills" class="menuButtonTop">{{ headerTemplateService.languageData[language].skillsTitle }}</a>
+                    <a (click)="navigateTo('aboutMe')" class="menuButtonTop">{{ headerTemplateService.languageData[language].aboutMeTitle }}</a>
+                    <a (click)="navigateTo('skills')"class="menuButtonTop">{{ headerTemplateService.languageData[language].skillsTitle }}</a>
                 </div>
                 <div class="linksContainerBottom">
-                    <a href="#projects" class="menuButtonBottom">{{ headerTemplateService.languageData[language].projectsTitle }}</a>
-                    <a href="#contact" class="menuButtonBottom">{{ headerTemplateService.languageData[language].contactTitle }}</a>
+                    <a (click)="navigateTo('projects')" class="menuButtonBottom">{{ headerTemplateService.languageData[language].projectsTitle }}</a>
+                    <a (click)="navigateTo('contact')" class="menuButtonBottom">{{ headerTemplateService.languageData[language].contactTitle }}</a>
                 </div>
             </div> 
         </div>

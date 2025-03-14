@@ -8,9 +8,10 @@ import { NgForm } from '@angular/forms'; // Importiere NgForm
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { inject } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, NavigationExtras } from '@angular/router';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 import { IntersectionObserverDirective } from '../intersection-observer.directive';
+import emailjs, { type EmailJSResponseStatus } from '@emailjs/browser';
 
 @Component({
   selector: 'app-contact',
@@ -166,7 +167,7 @@ export class ContactComponent implements AfterViewInit {
   }
 
   sendButtonClicked() {
-    this.showPopup();
+    // this.showPopup();
 
     this.sendMail(
       this.nameInput.nativeElement.value, 
@@ -181,33 +182,35 @@ export class ContactComponent implements AfterViewInit {
     this.toggleButtonState(false, this.sendButton.nativeElement);
   }
 
-  post = {
-    endPoint: 'https://sendemail-i3cvbd4gaa-uc.a.run.app/sendemail/',
-    options: {
-      headers: {
-        'Content-Type': 'application/json; charset=utf-8',
-      },
-    },
-  };
-
   sendMail(name: string, email: string, message: string) {
     const contactData = {
       name: name,
       email: email,
       message: message
     };
-    this.http.post(this.post.endPoint, contactData, this.post.options)          
-    .subscribe({
-      next: (response) => {
-        // console.log('Email sent successfully:', response);
-      },
-      error: (error) => {
-        // console.error('Error sending email:', error);
-      },
-      complete: () => {
-        // this.showPopup();
-        // console.info('send post complete');
-      }
+    emailjs
+      .send('gmail_send_email_to_me', 'portfolio_contact_form', contactData, 'EqETlweoA9cJ76ZwE')
+      .then(
+        () => {
+          console.log('SUCCESS!');
+          this.showPopup();
+        },
+        (error) => {
+          console.log('FAILED...', (error as EmailJSResponseStatus).text);
+        },
+      );
+  }
+
+  navigateTo(section: string) {
+    this.router.navigate([], { fragment: section }).then(() => {
+      setTimeout(() => {
+        const element = document.getElementById(section);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } else {
+          console.warn('Element not found:', section);
+        }
+      }, 100);
     });
   }
 }

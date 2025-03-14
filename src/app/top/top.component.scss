@@ -125,6 +125,7 @@
             text-decoration: none; 
             transition: all 0.25s ease-in-out; 
             &:hover {
+              cursor: pointer;
               color: #007bff; 
               transform: scale(1.25);
             }

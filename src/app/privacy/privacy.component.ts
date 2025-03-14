@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { PrivacyTemplateService } from './privacy.template.service';
 import { LanguageService } from '../language.service';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-privacy',
@@ -13,7 +14,15 @@ import { LanguageService } from '../language.service';
 
 export class PrivacyComponent {
   language: 'english' | 'german' = 'english';
-  constructor(public privacyTemplateService: PrivacyTemplateService, private route: ActivatedRoute, private languageService: LanguageService) {}
+
+  constructor(
+    public privacyTemplateService: PrivacyTemplateService, 
+    private route: ActivatedRoute, 
+    private languageService: LanguageService,
+    private router: Router,
+    private appComponent: AppComponent
+  ) {}
+
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
       const lang = params.get('language') as 'english' | 'german';
@@ -24,6 +33,14 @@ export class PrivacyComponent {
     });
     this.languageService.language$.subscribe(lang => {
       this.language = lang;
+    });
+  }
+
+  navigateToHome() {
+    this.router.navigate(['/top', this.language]).then(() => {
+      window.scrollTo({ top: 0, behavior: 'smooth' }); 
+      this.appComponent.resetImprintPage();
+      this.appComponent.resetPrivacyPage();
     });
   }
 }
