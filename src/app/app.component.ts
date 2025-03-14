@@ -73,17 +73,21 @@ export class AppComponent {
   onWindowScroll() {
     const { nativeElement } = this.elRef;
     const headerElement = nativeElement.querySelector('#header');
+    const headerContainer = nativeElement.querySelector('#headerContainer');
     const bodyElement = document.body;
     if(this.isImprintPage == true || this.isPrivacyPage == true) {
-      headerElement.classList.add('fixed');
-      bodyElement.style.paddingTop = `100px`;
+      headerElement.classList.add('fixedHeader');
+        headerContainer.classList.add('fixedHeaderContainer')
+        bodyElement.style.paddingTop = `100px`;
     }
     if(this.isImprintPage == false && this.isPrivacyPage == false) {
       if (window.scrollY > window.innerHeight) {
-        headerElement.classList.add('fixed');
+        headerElement.classList.add('fixedHeader');
+        headerContainer.classList.add('fixedHeaderContainer')
         bodyElement.style.paddingTop = `100px`;
       } else {
-        headerElement.classList.remove('fixed');
+        headerElement.classList.remove('fixedHeader');
+        headerContainer.classList.add('fixedHeaderContainer')
         bodyElement.style.paddingTop = `0`;
       }
     }
