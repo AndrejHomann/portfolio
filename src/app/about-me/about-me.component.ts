@@ -23,6 +23,7 @@ import { IntersectionObserverDirective } from '../intersection-observer.directiv
 
 export class AboutMeComponent {
   isVisible = false;
+  
   onIntersection(isIntersecting: boolean) {
     this.isVisible = isIntersecting;
   }

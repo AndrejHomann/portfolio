@@ -2,7 +2,6 @@
     scroll-margin-top: -10px;
     width: 100vw;
     max-width: 1920px;
-    // height: 900px;
     background-color: rgb(37, 45, 51);
     display: flex;
     justify-content: center;
@@ -18,7 +17,6 @@
     }
     #projectsContainer {
         width: 100%; 
-        // min-height: 655px;
         #tabContainer {
             width: 80%;
             display: flex;
@@ -163,8 +161,6 @@
         align-items: start;
         gap: 5%;
         width: 100%;
-        // flex-grow: 1;
-        // align-self: stretch;
         .bulletPoint {
             min-width: 25px;
             min-height: 22px;

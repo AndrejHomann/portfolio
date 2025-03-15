@@ -38,7 +38,7 @@ export class PrivacyComponent {
 
   navigateToHome() {
     this.router.navigate(['/top', this.language]).then(() => {
-      window.scrollTo({ top: 0, behavior: 'smooth' }); 
+      window.scrollTo({ top: 1, behavior: 'smooth' }); 
       this.appComponent.resetImprintPage();
       this.appComponent.resetPrivacyPage();
     });

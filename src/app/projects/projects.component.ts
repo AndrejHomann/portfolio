@@ -32,16 +32,23 @@ import { IntersectionObserverDirective } from '../intersection-observer.directiv
 
 export class ProjectsComponent {
   isVisible = false;
+
   onIntersection(isIntersecting: boolean) {
     this.isVisible = isIntersecting;
   }
 
   @Input() language: 'english' | 'german' = 'english';
   innerWidth: number = window.innerWidth;
-  constructor(private elRef: ElementRef, public projectsTemplateService: ProjectsTemplateService) {}
+
+  constructor(
+    private elRef: ElementRef, 
+    public projectsTemplateService: ProjectsTemplateService
+  ) {}
+
   joinVisible = true;
 
   @HostListener('window:resize', ['$event'])
+  
   onResize(event: Event) {
     this.innerWidth = window.innerWidth;
     this.updateJoinVisibility();

@@ -25,6 +25,7 @@ import { AppComponent } from '../app.component';
 
 export class FooterComponent {
   isVisible = false;
+
   onIntersection(isIntersecting: boolean) {
     this.isVisible = isIntersecting;
   }
@@ -39,6 +40,7 @@ export class FooterComponent {
 
   public isImprintPage = false;
   @Output() imprintClicked = new EventEmitter<boolean>();
+
   showImprintPage(event: Event): void {
     event.preventDefault();  
     this.imprintClicked.emit(true);  
@@ -47,8 +49,10 @@ export class FooterComponent {
       window.scrollTo({ top: 0 });
     });
   }
+
   public isPrivacyPage = false;
   @Output() privacyClicked = new EventEmitter<boolean>();
+  
   showPrivacyPage(event: Event): void {
     event.preventDefault();  
     this.privacyClicked.emit(true);  

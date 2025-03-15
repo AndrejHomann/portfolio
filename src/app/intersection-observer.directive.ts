@@ -4,6 +4,7 @@ import { Directive, ElementRef, EventEmitter, Output, AfterViewInit } from '@ang
   selector: '[appIntersectionObserver]',
   standalone: true
 })
+
 export class IntersectionObserverDirective implements AfterViewInit {
   @Output() intersecting = new EventEmitter<boolean>(); 
 

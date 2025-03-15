@@ -22,10 +22,12 @@ import { IntersectionObserverDirective } from '../intersection-observer.directiv
 
 export class SkillsComponent {
   isVisible = false;
+  
   onIntersection(isIntersecting: boolean) {
     this.isVisible = isIntersecting;
   }
 
   @Input() language: 'english' | 'german' = 'english';
+
    constructor(public skillsTemplateService: SkillsTemplateService) {}
 }

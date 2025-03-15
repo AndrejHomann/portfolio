@@ -67,24 +67,6 @@ export class HeaderComponent implements OnInit {
     nativeElement.querySelector('#english').style.color = "white";
   }
 
-  // @HostListener('window:scroll', ['$event'])
-  // onWindowScroll() {
-  //   const { nativeElement } = this.elRef;
-  //   const headerElement = nativeElement.querySelector('#header');
-  //   const bodyElement = document.body;
-  //   if(this.appComponent.isImprintPage == true || this.appComponent.isPrivacyPage == true) {
-  //     headerElement.classList.add('fixed');
-  //     bodyElement.style.paddingTop = `100px`;
-  //   }
-  //   if(this.appComponent.isImprintPage == false && this.appComponent.isPrivacyPage == false) {
-  //     if (window.scrollY > window.innerHeight) {
-  //       headerElement.classList.add('fixed');
-  //     } else {
-  //       headerElement.classList.remove('fixed');
-  //     }
-  //   }
-  // }
-
   ngOnInit() {
     this.updateWindowWidth();
     if (this.language == "german") {
@@ -96,11 +78,13 @@ export class HeaderComponent implements OnInit {
   }
 
   @HostListener('window:resize', ['$event'])
+
   onResize(event: Event) {
     this.updateWindowWidth();
   }
 
   windowWidth: number = window.innerWidth;
+
   updateWindowWidth() {
     this.windowWidth = window.innerWidth;
   }
@@ -123,54 +107,54 @@ export class HeaderComponent implements OnInit {
     this.languageService.setLanguage(this.language);
   }
 
-  // navigateTo(section: string) {
-  //   this.router.navigate([], { fragment: section }).then(() => {
-  //     setTimeout(() => {
-  //       const element = document.getElementById(section);
-  //       if (element) {
-  //         element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  //       } else {
-  //         console.warn('Element not found:', section);
-  //       }
-  //     }, 100);
-  //     this.appComponent.resetImprintPage();
-  //     this.appComponent.resetPrivacyPage();
-  //   });
-  // }
-
-  
   navigateTo(section: string) {
-    if(this.appComponent.isImprintPage == false || this.appComponent.isPrivacyPage == false) {
-      this.router.navigate([], { fragment: section }).then(() => {
-        setTimeout(() => {
-          const element = document.getElementById(section);
-          if (element) {
-            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            setTimeout(() => {
-              window.scrollBy(0, -100);
-            }, 700);
-          } else {
-            console.warn('Element not found:', section);
-          }
-        }, 100);
-      });
+    if (this.windowWidth > 375) {
+      this.desktopNavigation(section);
+    } else {
+      this.mobileNavigation(section);
     }
-    if(this.appComponent.isImprintPage == true || this.appComponent.isPrivacyPage == true) {
-      this.router.navigate([], { fragment: section }).then(() => {
-        setTimeout(() => {
-          const element = document.getElementById(section);
-          if (element) {
-            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            setTimeout(() => {
-              window.scrollBy(0, -50);
-            }, 900);
-          } else {
-            console.warn('Element not found:', section);
-          }
-        }, 100);
-        this.appComponent.resetImprintPage();
-        this.appComponent.resetPrivacyPage();
-      });
+  }
+  
+  desktopNavigation(section: string) {
+    if (this.isLegalPage()) {
+      this.navigateAndScroll(section, -150);
+      this.resetLegalPages();
+    } else {
+      this.navigateAndScroll(section, -100);
     }
+  }
+  
+  mobileNavigation(section: string) {
+    this.navigateAndScroll(section, 0);
+    this.resetLegalPages();
+  }
+  
+  isLegalPage(): boolean {
+    return this.appComponent.isImprintPage || this.appComponent.isPrivacyPage;
+  }
+  
+  navigateAndScroll(section: string, scrollOffset: number) {
+    this.router.navigate([], { fragment: section }).then(() => {
+      setTimeout(() => {
+        const element = document.getElementById(section);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          this.scrollByOffset(scrollOffset);
+        } else {
+          console.warn('Element not found:', section);
+        }
+      }, 100);
+    });
+  }
+  
+  scrollByOffset(offset: number) {
+    setTimeout(() => {
+      window.scrollBy(0, offset);
+    }, 900);
+  }
+  
+  resetLegalPages() {
+    this.appComponent.resetImprintPage();
+    this.appComponent.resetPrivacyPage();
   }
 }

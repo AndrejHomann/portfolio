@@ -34,22 +34,26 @@ import { PrivacyComponent } from './privacy/privacy.component';
 
 export class AppComponent {
   title = 'testproject';
+
   constructor(
     private router: Router,
     private elRef: ElementRef, 
   ) {}
 
   selectedLanguage: 'english' | 'german' = 'english';
+
   onLanguageChanged(language: 'english' | 'german') {
     this.selectedLanguage = language;
   }
 
   isImprintPage: boolean = false; 
   isPrivacyPage: boolean = false; 
+
   onShowImprintPage(isImprint: boolean) {
     this.isImprintPage = true;
     this.isPrivacyPage = false;
   }
+
   onShowPrivacyPage(isPrivacy: boolean) {
     this.isImprintPage = false;
     this.isPrivacyPage = true;
@@ -58,6 +62,7 @@ export class AppComponent {
   resetImprintPage() {
     this.isImprintPage = false;
   }
+
   resetPrivacyPage() {
     this.isPrivacyPage = false;
   }
@@ -65,31 +70,52 @@ export class AppComponent {
   isMobile = window.innerWidth <= 375;
 
   @HostListener('window:resize', ['$event'])
+
   onResize(event: Event) {
     this.isMobile = (event.target as Window).innerWidth <= 375;
   }
 
   @HostListener('window:scroll', ['$event'])
+
   onWindowScroll() {
     const { nativeElement } = this.elRef;
-    const headerElement = nativeElement.querySelector('#header');
+    const header = nativeElement.querySelector('#header');
     const headerContainer = nativeElement.querySelector('#headerContainer');
-    const bodyElement = document.body;
+    const body = document.body;
+
     if(this.isImprintPage == true || this.isPrivacyPage == true) {
-      headerElement.classList.add('fixedHeader');
-        headerContainer.classList.add('fixedHeaderContainer')
-        bodyElement.style.paddingTop = `100px`;
+      this.fixHeaderLegal(header, headerContainer, body);
     }
     if(this.isImprintPage == false && this.isPrivacyPage == false) {
-      if (window.scrollY > window.innerHeight) {
-        headerElement.classList.add('fixedHeader');
-        headerContainer.classList.add('fixedHeaderContainer')
-        bodyElement.style.paddingTop = `100px`;
-      } else {
-        headerElement.classList.remove('fixedHeader');
-        headerContainer.classList.add('fixedHeaderContainer')
-        bodyElement.style.paddingTop = `0`;
-      }
+      this.fixHeader(header, headerContainer, body);
     }
+  }
+
+  fixHeaderLegal(header: HTMLElement, headerContainer: HTMLElement, body: HTMLElement) {
+    header.classList.add('fixedHeader');
+    headerContainer.classList.add('fixedHeaderContainer')
+    body.style.paddingTop = `100px`;
+  }
+
+  fixHeader(header: HTMLElement, headerContainer: HTMLElement, body: HTMLElement) {
+    if (window.scrollY > window.innerHeight) {
+      header.classList.add('fixedHeader');
+      headerContainer.classList.add('fixedHeaderContainer')
+      body.style.paddingTop = `100px`;
+    } else {
+      header.classList.remove('fixedHeader');
+      headerContainer.classList.remove('fixedHeaderContainer')
+      body.style.paddingTop = `0`;
+    }
+  }
+  
+  showPopup = false;
+  
+  onPopupTrigger() {
+    this.showPopup = true;
+  }
+  
+  closePopup() {
+    this.showPopup = false;
   }
 }

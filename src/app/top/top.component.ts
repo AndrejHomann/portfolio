@@ -25,6 +25,7 @@ export class TopComponent implements OnInit {
   ) {}
   
   menuOpen = false;
+
   hamburgerAnimation() {
     const hamMenuButton = document.getElementById('hamburger');
     const profilePic = document.getElementById('profilePicture');
@@ -87,21 +88,6 @@ export class TopComponent implements OnInit {
     this.highlightEnButton();
     this.languageService.setLanguage(this.language);
   }
-
-  // navigateTo(section: string) {
-  //   this.router.navigate([], { fragment: section }).then(() => {
-  //     setTimeout(() => {
-  //       const element = document.getElementById(section);
-  //       if (element) {
-  //         element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  //       } else {
-  //         console.warn('Element not found:', section);
-  //       }
-  //     }, 100);
-  //     this.appComponent.resetImprintPage();
-  //     this.appComponent.resetPrivacyPage();
-  //   });
-  // }
 
   navigateTo(section: string) {
     this.router.navigate([], { fragment: section }).then(() => {

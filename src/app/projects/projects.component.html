@@ -1,7 +1,6 @@
 <div id="projects" [@flip]="isVisible ? 'flipped' : 'unflipped'" appIntersectionObserver (intersecting)="onIntersection($event)">
     <h1>{{ projectsTemplateService.languageData[language].projectTitle }}</h1>
     <div id="projectsContainer">
-
         <div id="tabContainer">
             <div id="joinTabNameContainer" (click)="showJoin()" class="mark">
                 <span id="joinTab" class="tabName" >1. Join</span>
@@ -10,7 +9,6 @@
                 <span id="eplTab" class="tabName" >2. EPL</span>
             </div>
         </div>
-
         <div id="joinContainer">
             <div id="join">
                 <div class="projectInfo">

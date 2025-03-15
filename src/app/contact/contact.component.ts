@@ -32,6 +32,7 @@ import emailjs, { type EmailJSResponseStatus } from '@emailjs/browser';
 
 export class ContactComponent implements AfterViewInit {
   isVisible = false;
+
   onIntersection(isIntersecting: boolean) {
     this.isVisible = isIntersecting;
   }
@@ -42,6 +43,7 @@ export class ContactComponent implements AfterViewInit {
 
   public isPrivacyPage = false;
   @Output() privacyClicked = new EventEmitter<boolean>();
+  
   showPrivacyPage(event: Event): void {
     event.preventDefault();  
     this.privacyClicked.emit(true);
@@ -166,9 +168,9 @@ export class ContactComponent implements AfterViewInit {
     document.body.style.overflow = 'auto';
   }
 
-  sendButtonClicked() {
-    // this.showPopup();
+  @Output() popupTriggered = new EventEmitter<void>();
 
+  sendButtonClicked() {
     this.sendMail(
       this.nameInput.nativeElement.value, 
       this.eMailInput.nativeElement.value,
@@ -193,7 +195,7 @@ export class ContactComponent implements AfterViewInit {
       .then(
         () => {
           console.log('SUCCESS!');
-          this.showPopup();
+          this.popupTriggered.emit();
         },
         (error) => {
           console.log('FAILED...', (error as EmailJSResponseStatus).text);

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root' // Service wird global bereitgestellt
+  providedIn: 'root' 
 })
 
 export class FooterTemplateService {
@@ -14,7 +14,7 @@ export class FooterTemplateService {
         imprint: string;
         privacy: string;
       };
-    } = {
+  } = {
       english: {
         imprint: 'Imprint',
         privacy: 'Privacy Policy'
@@ -23,5 +23,5 @@ export class FooterTemplateService {
         imprint: 'Impressum',
         privacy: 'Datenschutzrichtlinie'
       }
-    };
+  };
 }

@@ -132,9 +132,6 @@
 }
 @media (max-width: 1130px) {
     #projects {
-        // h1 {
-        //     font-size: calc(60px - 2*10px);
-        // }
         #projectsContainer {
             #tabContainer {
                 height: calc(80px - 10px);
@@ -293,7 +290,6 @@
             margin-top: calc(50px + 53px);
         }
         #projectsContainer {
-            // min-height: 930px;
             #tabContainer {
                 height: calc(80px - 2*10px);
                 #joinTabNameContainer {
@@ -312,7 +308,6 @@
                 }
             }
             #joinContainerMobile {
-                // display: flex;
                 #join {
                     .projectInfo {
                         margin-right: calc(40px - 20px);

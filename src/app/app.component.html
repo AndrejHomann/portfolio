@@ -4,7 +4,7 @@
     <app-about-me [language]="selectedLanguage"></app-about-me> 
     <app-skills [language]="selectedLanguage"></app-skills>
     <app-projects [language]="selectedLanguage"></app-projects>
-    <app-contact [language]="selectedLanguage" (privacyClicked)="onShowPrivacyPage($event)"></app-contact>
+    <app-contact [language]="selectedLanguage" (privacyClicked)="onShowPrivacyPage($event)" (popupTriggered)="onPopupTrigger()"></app-contact>
     <app-footer [language]="selectedLanguage" (imprintClicked)="onShowImprintPage($event)" (privacyClicked)="onShowPrivacyPage($event)"></app-footer>
 </div>
 
@@ -18,4 +18,12 @@
     <app-header (languageChanged)="onLanguageChanged($event)" [language]="selectedLanguage" [legalDesktop]="false" [legalMobile]="true"></app-header>
     <router-outlet></router-outlet>
     <app-footer [language]="selectedLanguage" (imprintClicked)="onShowImprintPage($event)" (privacyClicked)="onShowPrivacyPage($event)"></app-footer>
+</div>
+
+<div id="popupOverlay" [ngClass]="{'showPopup': showPopup, 'hidePopup': !showPopup}" (click)="closePopup()">
+    <div id="popupInfoMessageSent" (click)="$event.stopPropagation()">
+        <h2>Your message was sent.</h2>
+        <p>I will answer you as soon as possible.</p>
+        <button id="popupCloseButton" (click)="closePopup()">OK</button>
+    </div>
 </div>
