@@ -1,6 +1,6 @@
-import { Component, HostListener, ElementRef } from '@angular/core';
+import { Component, HostListener, ElementRef, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Router, RouterModule, RouterOutlet } from '@angular/router';
+import { Router, RouterModule, RouterOutlet, NavigationStart } from '@angular/router';
 import { TopComponent } from './top/top.component'; 
 import { HeaderComponent } from './header/header.component'; 
 import { AboutMeComponent } from './about-me/about-me.component'; 
@@ -10,6 +10,7 @@ import { ContactComponent } from './contact/contact.component'
 import { FooterComponent } from './footer/footer.component'; 
 import { ImprintComponent } from './imprint/imprint.component'; 
 import { PrivacyComponent } from './privacy/privacy.component'; 
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-root',
@@ -38,7 +39,29 @@ export class AppComponent {
   constructor(
     private router: Router,
     private elRef: ElementRef, 
+    private location: Location
   ) {}
+  
+  @HostListener('window:beforeunload', ['$event'])
+  unloadNotification($event: any): void {
+    sessionStorage.setItem('lastRoute', this.router.url);
+    sessionStorage.setItem('isImprintPage', this.isImprintPage ? 'true' : 'false');
+    sessionStorage.setItem('isPrivacyPage', this.isPrivacyPage ? 'true' : 'false');
+  }
+
+  ngOnInit() {
+    const lastRoute = sessionStorage.getItem('lastRoute');
+    const isImprintPageStored = sessionStorage.getItem('isImprintPage') === 'true';
+    const isPrivacyPageStored = sessionStorage.getItem('isPrivacyPage') === 'true';
+    if (isImprintPageStored == true) {
+      this.isImprintPage = true;
+      this.isPrivacyPage = false;
+    } 
+    if (isPrivacyPageStored == true) {
+      this.isImprintPage = false;
+      this.isPrivacyPage = true;
+    } 
+  }
 
   selectedLanguage: 'english' | 'german' = 'english';
 

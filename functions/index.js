@@ -59,7 +59,6 @@ async function sendMail(to, subject, text, html) {
         };
 
         const result = await transporter.sendMail(mailOptions);
-        console.log("Email sent:", result);
         return result;
     } catch (error) {
         console.error("Error sending email:", error);
@@ -69,12 +68,10 @@ async function sendMail(to, subject, text, html) {
 
 // Endpunkt für sendemail
 app.post("/sendemail/", async (req, res) => {
-    console.log("Raw Request Body:", req.body);
     try {
         const email = req.body.email;
         const name = req.body.name;
         const message = req.body.message;
-        console.log("Extracted Data:", { email, name, message });
 
         await sendMail(
             "andrej.homann1990@gmail.com", 

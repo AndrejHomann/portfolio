@@ -20,10 +20,17 @@
     <app-footer [language]="selectedLanguage" (imprintClicked)="onShowImprintPage($event)" (privacyClicked)="onShowPrivacyPage($event)"></app-footer>
 </div>
 
-<div id="popupOverlay" [ngClass]="{'showPopup': showPopup, 'hidePopup': !showPopup}" (click)="closePopup()">
+<div id="popupOverlay" [ngClass]="{'showPopup': showPopup, 'hidePopup': !showPopup}" (click)="closePopup()" *ngIf="selectedLanguage=='english'">
     <div id="popupInfoMessageSent" (click)="$event.stopPropagation()">
         <h2>Your message was sent.</h2>
         <p>I will answer you as soon as possible.</p>
+        <button id="popupCloseButton" (click)="closePopup()">OK</button>
+    </div>
+</div>
+<div id="popupOverlay" [ngClass]="{'showPopup': showPopup, 'hidePopup': !showPopup}" (click)="closePopup()" *ngIf="selectedLanguage=='german'">
+    <div id="popupInfoMessageSent" (click)="$event.stopPropagation()">
+        <h2>Ihre Nachricht wurde gesendet.</h2>
+        <p>Ich werde Ihnen schnellstmöglich antworten.</p>
         <button id="popupCloseButton" (click)="closePopup()">OK</button>
     </div>
 </div>

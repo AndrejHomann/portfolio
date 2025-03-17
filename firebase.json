@@ -8,8 +8,8 @@
     ],
     "rewrites": [
       {
-        "source": "/sendemail",
-        "function": "sendemail"
+        "source": "**",
+        "destination": "/index.html"
       }
     ]
   },

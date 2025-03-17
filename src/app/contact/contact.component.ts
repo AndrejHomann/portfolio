@@ -194,11 +194,11 @@ export class ContactComponent implements AfterViewInit {
       .send('gmail_send_email_to_me', 'portfolio_contact_form', contactData, 'EqETlweoA9cJ76ZwE')
       .then(
         () => {
-          console.log('SUCCESS!');
+          // console.log('SUCCESS!');
           this.popupTriggered.emit();
         },
         (error) => {
-          console.log('FAILED...', (error as EmailJSResponseStatus).text);
+          // console.log('FAILED...', (error as EmailJSResponseStatus).text);
         },
       );
   }
